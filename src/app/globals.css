@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@theme {
+  --font-serif: var(--font-heading);
+  --font-zen: var(--font-zen-maru);
+}
 :root {
   --background: #ffffff;
   --foreground: #171717;

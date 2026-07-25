@@ -114,12 +114,7 @@ export default function CrowdfundingLP() {
             </motion.p>
           </div>
           
-          <motion.div variants={fadeIn} className="mt-16 text-center max-w-3xl mx-auto">
-             <div className="aspect-video bg-[#fef5f7] rounded-2xl border-2 border-rose-100 flex items-center justify-center overflow-hidden shadow-sm">
-               <img src="/luna_sketch.png" alt="MIRAISえほんイメージ" className="h-full object-cover mix-blend-multiply opacity-80" />
-             </div>
-             <p className="mt-4 text-slate-500 font-medium">※制作中のイメージ画像</p>
-          </motion.div>
+
         </motion.div>
       </section>
 
@@ -513,7 +508,7 @@ export default function CrowdfundingLP() {
                   </p>
                   <div className="p-4 bg-[#fefce8] border border-[#f9e28c] rounded-xl text-xs text-[#5d4037] leading-relaxed">
                     <strong>注記：</strong><br/>
-                    「MIRAIS入会・再参加＋えほん応援コース」に含まれる参加費は、コミュニティの運営および活動提供に活用します。それ以外のご支援は、MIRAISえほん制作・リターン提供・プロジェクト運営に大切に活用します。
+                    「MIRAIS入会＋えほん応援コース」に含まれる参加費は、コミュニティの運営および活動提供に活用します。それ以外のご支援は、MIRAISえほん制作・リターン提供・プロジェクト運営に大切に活用します。
                   </div>
                 </div>
               </div>
@@ -621,10 +616,10 @@ export default function CrowdfundingLP() {
               </button>
             </motion.div>
 
-            {/* MIRAIS入会・再参加 */}
+            {/* MIRAIS入会 */}
             <motion.div variants={fadeIn} className="relative bg-white p-6 md:p-8 rounded-[2rem] border-2 border-slate-200 shadow-sm flex flex-col">
               <div className="mb-4 mt-2 text-center">
-                <h3 className="font-bold text-lg md:text-xl text-[#5d4037]">MIRAIS入会・再参加<br/>＋えほん応援</h3>
+                <h3 className="font-bold text-lg md:text-xl text-[#5d4037]">MIRAIS入会<br/>＋えほん応援</h3>
                 <div className="text-2xl md:text-3xl font-bold text-slate-500 mt-2 md:mt-4">¥30,000</div>
               </div>
               <p className="text-[#5d4037] mb-6 flex-grow leading-relaxed text-sm md:text-base">

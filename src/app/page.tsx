@@ -195,8 +195,11 @@ export default function CrowdfundingLP() {
             </motion.h2>
           </div>
           <div className="bg-white p-4 md:p-8 rounded-[3rem] shadow-sm">
-            <motion.div variants={fadeIn} className="w-full rounded-[2rem] overflow-hidden">
-              <img src="/mirais_about.png" alt="MIRAISについて" className="w-full h-auto border border-slate-100 rounded-[2rem]" />
+            <motion.div variants={fadeIn} className="w-full flex flex-col gap-4 md:gap-8">
+              <img src="/mirais_about_1.png" alt="育休コミュニティMIRAISとは" className="w-full h-auto border border-slate-100 rounded-[2rem]" />
+              <img src="/mirais_about_2.png" alt="MIRAISのめざすこと" className="w-full h-auto border border-slate-100 rounded-[2rem]" />
+              <img src="/mirais_about_3.png" alt="MIRAISの活動内容" className="w-full h-auto border border-slate-100 rounded-[2rem]" />
+              <img src="/mirais_about_4.png" alt="MIRAISの特徴" className="w-full h-auto border border-slate-100 rounded-[2rem]" />
             </motion.div>
           </div>
 

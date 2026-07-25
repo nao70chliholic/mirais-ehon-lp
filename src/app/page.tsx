@@ -21,6 +21,13 @@ export default function CrowdfundingLP() {
   return (
     <div className="min-h-screen bg-[#fdfbf7] text-[#5d4037] selection:bg-rose-200 overflow-hidden font-zen">
       
+      {/* ヘッダーロゴ */}
+      <header className="absolute top-0 left-0 w-full p-4 md:p-6 z-50">
+        <a href="https://www.ikukyu-mirais.com/" target="_blank" rel="noopener noreferrer" className="inline-block transition-transform hover:scale-105">
+          <img src="/mirais_logo.png" alt="MIRAIS" className="h-10 md:h-12 w-auto object-contain" />
+        </a>
+      </header>
+
       {/* 1. ファーストビュー */}
       <section className="relative min-h-[95vh] flex flex-col items-center justify-center px-6 pt-24 pb-16">
         <div className="absolute inset-0 bg-[#fdfbf7] -z-20"></div>

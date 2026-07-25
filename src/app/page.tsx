@@ -93,6 +93,11 @@ export default function CrowdfundingLP() {
                 お使いのブラウザは動画タグをサポートしていません。
               </video>
             </div>
+            <div className="mt-3 text-right">
+              <p className="text-sm md:text-base text-[#795548] font-medium">
+                動画音声協力: <a href="https://lit.link/yaginao" target="_blank" rel="noopener noreferrer" className="text-[#f0a8b9] hover:text-rose-400 underline decoration-rose-200 hover:decoration-rose-400 underline-offset-4 transition-all">八木なお</a>
+              </p>
+            </div>
           </motion.div>
 
           <div className="text-xl md:text-2xl text-[#5d4037] leading-[2.5] space-y-12">

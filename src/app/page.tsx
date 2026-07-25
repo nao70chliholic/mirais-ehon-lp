@@ -78,6 +78,23 @@ export default function CrowdfundingLP() {
             </motion.h2>
           </div>
 
+          <motion.div variants={fadeIn} className="w-full max-w-2xl mx-auto mt-12 mb-16">
+            <p className="text-[#5d4037] font-bold text-lg md:text-xl mb-4 text-center">
+              この48秒に私たちがこの絵本を作る理由を込めました。
+            </p>
+            <div className="relative aspect-video rounded-2xl overflow-hidden shadow-lg border-4 border-white bg-black/5">
+              <video 
+                className="w-full h-full object-cover"
+                controls
+                playsInline
+                preload="metadata"
+              >
+                <source src="/videos/MIRAIS_ehon_CM_LP_1080p.mp4?v=2" type="video/mp4" />
+                お使いのブラウザは動画タグをサポートしていません。
+              </video>
+            </div>
+          </motion.div>
+
           <div className="text-xl md:text-2xl text-[#5d4037] leading-[2.5] space-y-12">
             <motion.p variants={fadeIn}>
               子どもを愛しているのに、<br/>笑顔でいられなかった日。

@@ -237,7 +237,7 @@ export default function CrowdfundingLP() {
             </motion.h2>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 mb-16">
             <motion.div variants={fadeIn} className="text-center space-y-4">
               <div className="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-rose-100 shadow-md bg-[#f4f7f5]">
                 <img src="/naonao.jpg" alt="なおなお" className="w-full h-full object-cover" />
@@ -255,6 +255,12 @@ export default function CrowdfundingLP() {
                 <img src="/leon.png" alt="れおん" className="w-full h-full object-cover" />
               </div>
               <div><p className="text-sm font-bold text-[#86bfa0] mb-1">イラストレーター</p><p className="font-bold text-[#5d4037] text-xl">れおん</p></div>
+            </motion.div>
+            <motion.div variants={fadeIn} className="text-center space-y-4">
+              <div className="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-blue-200 shadow-md bg-blue-50">
+                <img src="/adi.png" alt="あでぃさん" className="w-full h-full object-cover" />
+              </div>
+              <div><p className="text-sm font-bold text-[#86bfa0] mb-1">クラファン支援</p><p className="font-bold text-[#5d4037] text-xl">あでぃさん</p></div>
             </motion.div>
           </div>
 

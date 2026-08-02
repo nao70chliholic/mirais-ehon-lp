@@ -56,7 +56,7 @@ export default function CrowdfundingLP() {
           </motion.p>
           
           <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-6 justify-center items-center w-full sm:w-auto mt-4">
-             <a href="#returns" className="group relative inline-flex items-center justify-center px-10 py-5 text-xl font-bold text-white transition-all bg-[#f0a8b9] rounded-full hover:bg-rose-400 overflow-hidden shadow-xl hover:shadow-rose-300/50 hover:-translate-y-1 w-full sm:w-auto">
+             <a href="https://readyfor.jp/projects/mirais-storybook?sns_share_token=e10485c4437094f6cedc&utm_source=pj_share_url&utm_medium=social" target="_blank" rel="noopener noreferrer" className="group relative inline-flex items-center justify-center px-10 py-5 text-xl font-bold text-white transition-all bg-[#f0a8b9] rounded-full hover:bg-rose-400 overflow-hidden shadow-xl hover:shadow-rose-300/50 hover:-translate-y-1 w-full sm:w-auto">
                <span className="relative flex items-center">
                  プロジェクトを応援する <ArrowRight className="ml-3 w-6 h-6 transition-transform group-hover:translate-x-2" />
                </span>
@@ -589,9 +589,9 @@ export default function CrowdfundingLP() {
               <div className="text-[#5d4037] mb-6 flex-grow leading-relaxed space-y-3 md:space-y-4 text-sm md:text-base">
                 <p>完成した絵本1冊とお礼のお手紙をお届けします。</p>
               </div>
-              <button className="w-full py-3 md:py-4 rounded-xl bg-[#f0a8b9] text-white font-bold hover:bg-rose-400 shadow-md transition-all hover:-translate-y-1">
+              <a href="https://readyfor.jp/projects/mirais-storybook?sns_share_token=e10485c4437094f6cedc&utm_source=pj_share_url&utm_medium=social" target="_blank" rel="noopener noreferrer" className="w-full py-3 md:py-4 rounded-xl bg-[#f0a8b9] text-white font-bold hover:bg-rose-400 shadow-md transition-all hover:-translate-y-1 block text-center">
                 支援する
-              </button>
+              </a>
             </motion.div>
 
             {/* お名前掲載 */}
@@ -603,9 +603,9 @@ export default function CrowdfundingLP() {
               <p className="text-[#5d4037] mb-6 flex-grow leading-relaxed text-sm md:text-base">
                 絵本にお名前を掲載いたします。（絵本本体のお届けはありません）
               </p>
-              <button className="w-full py-3 md:py-4 rounded-xl bg-[#eef7f2] text-[#5d4037] font-bold hover:bg-[#cbe8d8] transition-colors">
+              <a href="https://readyfor.jp/projects/mirais-storybook?sns_share_token=e10485c4437094f6cedc&utm_source=pj_share_url&utm_medium=social" target="_blank" rel="noopener noreferrer" className="w-full py-3 md:py-4 rounded-xl bg-[#eef7f2] text-[#5d4037] font-bold hover:bg-[#cbe8d8] transition-colors block text-center">
                 支援する
-              </button>
+              </a>
             </motion.div>
 
             {/* 絵本3冊ギフト */}
@@ -620,9 +620,9 @@ export default function CrowdfundingLP() {
               <p className="text-[#5d4037] mb-6 flex-grow leading-relaxed text-sm md:text-base">
                 絵本3冊をお届けします。ご友人やごきょうだいへのプレゼントに。
               </p>
-              <button className="w-full py-3 md:py-4 rounded-xl bg-[#eef7f2] text-[#5d4037] font-bold hover:bg-[#cbe8d8] transition-colors">
+              <a href="https://readyfor.jp/projects/mirais-storybook?sns_share_token=e10485c4437094f6cedc&utm_source=pj_share_url&utm_medium=social" target="_blank" rel="noopener noreferrer" className="w-full py-3 md:py-4 rounded-xl bg-[#eef7f2] text-[#5d4037] font-bold hover:bg-[#cbe8d8] transition-colors block text-center">
                 支援する
-              </button>
+              </a>
             </motion.div>
 
             {/* 家族・仲間に届ける5冊 */}
@@ -634,9 +634,9 @@ export default function CrowdfundingLP() {
               <p className="text-[#5d4037] mb-6 flex-grow leading-relaxed text-sm md:text-base">
                 絵本5冊をお届けします。周りの方々に配りたい方へ。
               </p>
-              <button className="w-full py-3 md:py-4 rounded-xl bg-[#fefce8] text-[#5d4037] font-bold hover:bg-[#f9e28c] transition-colors">
+              <a href="https://readyfor.jp/projects/mirais-storybook?sns_share_token=e10485c4437094f6cedc&utm_source=pj_share_url&utm_medium=social" target="_blank" rel="noopener noreferrer" className="w-full py-3 md:py-4 rounded-xl bg-[#fefce8] text-[#5d4037] font-bold hover:bg-[#f9e28c] transition-colors block text-center">
                 支援する
-              </button>
+              </a>
             </motion.div>
             
             {/* 団体・仲間に届ける10冊 */}
@@ -651,9 +651,9 @@ export default function CrowdfundingLP() {
               <p className="text-[#5d4037] mb-6 flex-grow leading-relaxed text-sm md:text-base">
                 絵本10冊をお届けし、絵本にお名前を掲載いたします。
               </p>
-              <button className="w-full py-3 md:py-4 rounded-xl bg-[#fefce8] text-[#5d4037] font-bold hover:bg-[#f9e28c] transition-colors">
+              <a href="https://readyfor.jp/projects/mirais-storybook?sns_share_token=e10485c4437094f6cedc&utm_source=pj_share_url&utm_medium=social" target="_blank" rel="noopener noreferrer" className="w-full py-3 md:py-4 rounded-xl bg-[#fefce8] text-[#5d4037] font-bold hover:bg-[#f9e28c] transition-colors block text-center">
                 支援する
-              </button>
+              </a>
             </motion.div>
 
             {/* MIRAIS入会 */}
@@ -665,9 +665,9 @@ export default function CrowdfundingLP() {
               <p className="text-[#5d4037] mb-6 flex-grow leading-relaxed text-sm md:text-base">
                 MIRAISのコミュニティに参加・再参加できる権利と、絵本応援がセットになったプランです。
               </p>
-              <button className="w-full py-3 md:py-4 rounded-xl bg-slate-100 text-slate-600 font-bold hover:bg-slate-200 transition-colors">
+              <a href="https://readyfor.jp/projects/mirais-storybook?sns_share_token=e10485c4437094f6cedc&utm_source=pj_share_url&utm_medium=social" target="_blank" rel="noopener noreferrer" className="w-full py-3 md:py-4 rounded-xl bg-slate-100 text-slate-600 font-bold hover:bg-slate-200 transition-colors block text-center">
                 支援する
-              </button>
+              </a>
             </motion.div>
           </div>
           
@@ -701,9 +701,9 @@ export default function CrowdfundingLP() {
               <p className="text-[#5d4037] flex-grow leading-relaxed mb-6 md:mb-8 text-sm md:text-base">
                 プロジェクトを個人として応援いただける方向けのプランです。<br/>お名前等の掲載を予定しております。
               </p>
-              <button className="w-full py-3 md:py-4 rounded-xl bg-slate-800 text-white font-bold hover:bg-slate-700 transition-colors">
+              <a href="https://readyfor.jp/projects/mirais-storybook?sns_share_token=e10485c4437094f6cedc&utm_source=pj_share_url&utm_medium=social" target="_blank" rel="noopener noreferrer" className="w-full py-3 md:py-4 rounded-xl bg-slate-800 text-white font-bold hover:bg-slate-700 transition-colors block text-center">
                 支援する
-              </button>
+              </a>
             </motion.div>
 
             {/* 法人・団体スポンサー 50,000円 */}
@@ -713,9 +713,9 @@ export default function CrowdfundingLP() {
               <p className="text-[#5d4037] flex-grow leading-relaxed mb-6 md:mb-8 text-sm md:text-base">
                 企業・団体として応援いただける方向けのプランです。<br/>ロゴや社名等の掲載（小）を予定しております。
               </p>
-              <button className="w-full py-3 md:py-4 rounded-xl bg-slate-800 text-white font-bold hover:bg-slate-700 transition-colors">
+              <a href="https://readyfor.jp/projects/mirais-storybook?sns_share_token=e10485c4437094f6cedc&utm_source=pj_share_url&utm_medium=social" target="_blank" rel="noopener noreferrer" className="w-full py-3 md:py-4 rounded-xl bg-slate-800 text-white font-bold hover:bg-slate-700 transition-colors block text-center">
                 支援する
-              </button>
+              </a>
             </motion.div>
 
             {/* 法人・団体スポンサー 100,000円 */}
@@ -726,9 +726,9 @@ export default function CrowdfundingLP() {
               <p className="flex-grow leading-relaxed mb-6 md:mb-8 text-rose-50/90 text-sm md:text-base">
                 強力にバックアップしていただける方向けの特別プランです。<br/>ロゴや社名等の掲載（大）などを予定しております。
               </p>
-              <button className="w-full py-3 md:py-4 rounded-xl bg-white text-[#5d4037] font-bold hover:bg-rose-50 transition-colors">
+              <a href="https://readyfor.jp/projects/mirais-storybook?sns_share_token=e10485c4437094f6cedc&utm_source=pj_share_url&utm_medium=social" target="_blank" rel="noopener noreferrer" className="w-full py-3 md:py-4 rounded-xl bg-white text-[#5d4037] font-bold hover:bg-rose-50 transition-colors block text-center">
                 支援する
-              </button>
+              </a>
             </motion.div>
           </div>
         </motion.div>
@@ -867,7 +867,7 @@ export default function CrowdfundingLP() {
           <motion.div variants={fadeIn} className="pt-8">
             <p className="text-xl md:text-2xl font-bold text-[#86bfa0] mb-8 bg-white/60 p-4 rounded-2xl inline-block shadow-sm">8月1日より、READYFORにて開始</p>
             <div>
-              <a href="#returns" className="group relative inline-flex items-center justify-center px-12 md:px-24 py-6 md:py-8 text-2xl font-bold text-white transition-all bg-[#f0a8b9] rounded-full hover:bg-rose-400 overflow-hidden shadow-2xl hover:shadow-rose-300/50 hover:-translate-y-2 w-full sm:w-auto">
+              <a href="https://readyfor.jp/projects/mirais-storybook?sns_share_token=e10485c4437094f6cedc&utm_source=pj_share_url&utm_medium=social" target="_blank" rel="noopener noreferrer" className="group relative inline-flex items-center justify-center px-12 md:px-24 py-6 md:py-8 text-2xl font-bold text-white transition-all bg-[#f0a8b9] rounded-full hover:bg-rose-400 overflow-hidden shadow-2xl hover:shadow-rose-300/50 hover:-translate-y-2 w-full sm:w-auto">
                 <span className="relative flex items-center tracking-wider">
                   プロジェクトを応援する <ArrowRight className="ml-4 w-8 h-8 transition-transform group-hover:translate-x-3" />
                 </span>

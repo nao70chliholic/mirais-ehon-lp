@@ -875,7 +875,7 @@ export default function CrowdfundingLP() {
             </div>
             <div className="text-[#795548] font-medium space-y-2 text-sm md:text-base mt-6">
               <p>※スムーズにご支援いただくために、事前のREADYFORへの会員登録（無料）をおすすめしております。</p>
-              <p className="font-bold">※READYFORのプロジェクトページへ遷移します（準備中）</p>
+              <p className="font-bold">※READYFORのプロジェクトページへ遷移します</p>
             </div>
           </motion.div>
         </motion.div>

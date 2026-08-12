@@ -22,7 +22,9 @@ body {
   font-family: var(--font-zen-maru), system-ui, sans-serif;
   line-height: 1.8;
   font-feature-settings: "palt";
-  overflow-wrap: anywhere;
+  line-break: strict;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 .font-serif {
@@ -32,12 +34,21 @@ body {
 
 .story-title {
   text-wrap: balance;
-  word-break: auto-phrase;
+  line-break: strict;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 .story-copy {
   text-wrap: pretty;
-  word-break: auto-phrase;
+  line-break: strict;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.phrase-unit {
+  display: inline-block;
+  white-space: nowrap;
 }
 
 .paper-texture {

@@ -18,6 +18,16 @@ const staggerContainer: Variants = {
   visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
 };
 
+function PhraseText({ phrases }: { phrases: readonly string[] }) {
+  return (
+    <>
+      {phrases.map((phrase, index) => (
+        <span className="phrase-unit" key={`${index}-${phrase}`}>{phrase}</span>
+      ))}
+    </>
+  );
+}
+
 export default function CrowdfundingLP() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
@@ -47,7 +57,7 @@ export default function CrowdfundingLP() {
           <div className="text-center lg:text-left lg:pt-10">
             <motion.div variants={fadeIn} className="mb-6 sm:mb-8">
               <span className="inline-block max-w-full rounded-full border border-[#eadfca] bg-white/85 px-4 py-2 text-[11px] sm:px-6 sm:text-sm text-[#b29022] font-bold tracking-[0.12em] shadow-[0_8px_30px_rgba(93,64,55,0.06)]">
-                育休コミュニティMIRAIS発！親心を未来に残す絵本
+                <PhraseText phrases={['育休コミュニティMIRAIS発！', '親心を未来に残す絵本']} />
               </span>
             </motion.div>
 
@@ -57,7 +67,7 @@ export default function CrowdfundingLP() {
             </motion.h1>
 
             <motion.p variants={fadeIn} className="story-copy max-w-[31rem] mx-auto lg:mx-0 text-base sm:text-xl lg:text-[1.35rem] text-[#795548] font-medium leading-[2] sm:leading-[2.05]">
-              親の「ありのままの気持ち」を、<span className="whitespace-nowrap">未来の子どもへ</span>手渡す絵本をつくります。
+              <PhraseText phrases={['親の「ありのままの気持ち」を、', '未来の子どもへ', '手渡す絵本をつくります。']} />
             </motion.p>
 
             <motion.div variants={fadeIn} className="mt-7 sm:mt-10 flex justify-center lg:justify-start">
@@ -96,13 +106,13 @@ export default function CrowdfundingLP() {
         >
           <div className="text-center space-y-6">
             <motion.h2 variants={fadeIn} className="story-title text-3xl md:text-[2.5rem] font-serif font-bold text-[#5d4037] leading-[1.55]">
-              読む絵本ではなく、残す絵本を作りたい。
+              <PhraseText phrases={['読む絵本ではなく、', '残す絵本を作りたい。']} />
             </motion.h2>
           </div>
 
           <motion.div variants={fadeIn} className="w-full max-w-2xl mx-auto mt-12 mb-16">
             <p className="text-[#5d4037] font-bold text-lg md:text-xl mb-4 text-center">
-              この48秒に私たちがこの絵本を作る理由を込めました。
+              <PhraseText phrases={['この48秒に私たちが', 'この絵本を作る理由を', '込めました。']} />
             </p>
             <div className="relative aspect-video rounded-2xl overflow-hidden shadow-lg border-4 border-white bg-black/5">
               <video 
@@ -124,19 +134,18 @@ export default function CrowdfundingLP() {
 
           <div className="story-copy text-lg md:text-xl text-[#5d4037] leading-[2.2] md:leading-[2.4] space-y-9 md:space-y-12 max-w-[34rem] mx-auto">
             <motion.p variants={fadeIn}>
-              子どもを愛しているのに、笑顔でいられなかった日。
+              <PhraseText phrases={['子どもを愛しているのに、', '笑顔でいられなかった日。']} />
             </motion.p>
             <motion.p variants={fadeIn}>
-              早く寝てほしいと思った夜。ひとりになりたいと思った瞬間。
+              <PhraseText phrases={['早く寝てほしいと思った夜。', 'ひとりになりたいと思った瞬間。']} />
             </motion.p>
             <motion.p variants={fadeIn}>
-              でも、その奥には、いつも子どもへの愛がありました。
+              <PhraseText phrases={['でも、その奥には、', 'いつも子どもへの愛がありました。']} />
             </motion.p>
             <motion.div variants={fadeIn} className="relative mt-24">
               <div className="bg-white border-2 border-dashed border-rose-300 p-10 md:p-16 rounded-[2.5rem] text-center shadow-sm">
                 <p className="story-title text-xl sm:text-2xl md:text-3xl font-serif font-bold text-[#e58fa5] leading-[1.8]">
-                  <span className="block sm:inline">私たちが作りたいのは、</span>{' '}
-                  <span className="block sm:inline">そんな親の気持ちを未来へ残す絵本です。</span>
+                  <PhraseText phrases={['私たちが作りたいのは、', 'そんな親の気持ちを', '未来へ残す絵本です。']} />
                 </p>
               </div>
             </motion.div>
@@ -153,17 +162,16 @@ export default function CrowdfundingLP() {
         >
           <div className="text-center space-y-6">
             <motion.h2 variants={fadeIn} className="text-3xl md:text-[2.5rem] font-serif font-bold text-[#5d4037] leading-tight">
-              MIRAISえほんとは
+              <PhraseText phrases={['MIRAISえほんとは']} />
             </motion.h2>
           </div>
           
           <div className="text-xl md:text-2xl text-[#5d4037] leading-[2.5] space-y-8 max-w-3xl mx-auto">
             <motion.p variants={fadeIn}>
-              MIRAISえほんは、育休コミュニティMIRAISのメンバーの体験から生まれる物語です。
+              <PhraseText phrases={['MIRAISえほんは、', '育休コミュニティMIRAISの', 'メンバーの体験から生まれる', '物語です。']} />
             </motion.p>
             <motion.p variants={fadeIn} className="font-bold">
-              今まさに子育ての真ん中にいる親たちの声をもとに、<br className="hidden md:block"/>
-              未来の子どもへ残す一冊を作ります。
+              <PhraseText phrases={['今まさに子育ての真ん中にいる', '親たちの声をもとに、', '未来の子どもへ残す', '一冊を作ります。']} />
             </motion.p>
           </div>
           
@@ -180,20 +188,20 @@ export default function CrowdfundingLP() {
         >
           <div className="text-center space-y-6">
             <motion.h2 variants={fadeIn} className="text-3xl md:text-[2.5rem] font-serif font-bold text-[#5d4037] leading-tight">
-              なぜMIRAISが作るのか
+              <PhraseText phrases={['なぜMIRAISが', '作るのか']} />
             </motion.h2>
           </div>
           <div className="text-xl md:text-2xl text-[#5d4037] leading-[2.5] space-y-10 max-w-3xl mx-auto">
             <motion.p variants={fadeIn}>
-              親子愛を描く絵本は、世の中にたくさんあります。
+              <PhraseText phrases={['親子愛を描く絵本は、', '世の中にたくさんあります。']} />
             </motion.p>
             <motion.p variants={fadeIn}>
-              でも、今まさに育休中で、復職を控え、子育てに揺れる親たちの<br/>
+              <PhraseText phrases={['でも、今まさに育休中で、', '復職を控え、', '子育てに揺れる親たちの']} /><br/>
               <span className="text-2xl md:text-3xl font-bold text-[#f0a8b9] inline-block my-4">「生きた声」</span><br/>
-              から生まれる絵本は、ほとんどありません。
+              <PhraseText phrases={['から生まれる絵本は、', 'ほとんどありません。']} />
             </motion.p>
             <motion.p variants={fadeIn} className="font-bold text-[#86bfa0] pt-8 text-2xl md:text-3xl">
-              だから、MIRAISだから作る意味があります。
+              <PhraseText phrases={['だから、MIRAISだから', '作る意味があります。']} />
             </motion.p>
           </div>
         </motion.div>
@@ -211,27 +219,27 @@ export default function CrowdfundingLP() {
               この絵本で届けたいこと
             </motion.h2>
           </div>
-          <div className="grid gap-5 md:grid-cols-3 md:gap-6 lg:gap-8">
+          <div className="grid max-w-xl mx-auto gap-5 lg:max-w-none lg:grid-cols-3 lg:gap-8">
             <motion.div variants={fadeIn} className="paper-texture group relative overflow-hidden rounded-[2rem] border border-[#f3d9df] bg-[#fff7f8] p-7 sm:p-9 md:px-7 md:py-9 lg:p-10 text-center shadow-[0_14px_40px_rgba(93,64,55,0.06)] transition-transform hover:-translate-y-1">
               <div className="mx-auto mb-5 flex h-20 w-20 rotate-[-3deg] items-center justify-center rounded-[44%_56%_48%_52%] bg-white text-[#e994aa] shadow-[0_10px_25px_rgba(233,148,170,0.16)] ring-1 ring-[#f4d8df] transition-transform group-hover:rotate-0">
                 <BookOpen aria-hidden="true" strokeWidth={1.6} className="h-9 w-9" />
               </div>
               <h3 className="font-bold text-xl lg:text-2xl text-[#dc839a] mb-4">子どもへ</h3>
-              <p className="story-copy text-[#5d4037] leading-[2] text-base lg:text-lg font-medium">「あなたはずっと、大切に思われていた」という変わらない愛を伝えます。</p>
+              <p className="story-copy text-[#5d4037] leading-[2] text-base lg:text-lg font-medium"><PhraseText phrases={['「あなたはずっと、', '大切に思われていた」という', '変わらない愛を伝えます。']} /></p>
             </motion.div>
             <motion.div variants={fadeIn} className="paper-texture group relative overflow-hidden rounded-[2rem] border border-[#cfe5d8] bg-[#f3faf6] p-7 sm:p-9 md:px-7 md:py-9 lg:p-10 text-center shadow-[0_14px_40px_rgba(93,64,55,0.06)] transition-transform hover:-translate-y-1">
               <div className="mx-auto mb-5 flex h-20 w-20 rotate-[3deg] items-center justify-center rounded-[54%_46%_52%_48%] bg-white text-[#74ae8d] shadow-[0_10px_25px_rgba(116,174,141,0.16)] ring-1 ring-[#cfe5d8] transition-transform group-hover:rotate-0">
                 <Heart aria-hidden="true" strokeWidth={1.6} className="h-9 w-9" />
               </div>
               <h3 className="font-bold text-xl lg:text-2xl text-[#6ea887] mb-4">親へ</h3>
-              <p className="story-copy text-[#5d4037] leading-[2] text-base lg:text-lg font-medium">うまくできなかった自分を責めるのではなく、一生懸命だった自分を抱きしめるお守りに。</p>
+              <p className="story-copy text-[#5d4037] leading-[2] text-base lg:text-lg font-medium"><PhraseText phrases={['うまくできなかった自分を', '責めるのではなく、', '一生懸命だった自分を', '抱きしめるお守りに。']} /></p>
             </motion.div>
             <motion.div variants={fadeIn} className="paper-texture group relative overflow-hidden rounded-[2rem] border border-[#f0dfaa] bg-[#fffbec] p-7 sm:p-9 md:px-7 md:py-9 lg:p-10 text-center shadow-[0_14px_40px_rgba(93,64,55,0.06)] transition-transform hover:-translate-y-1">
               <div className="mx-auto mb-5 flex h-20 w-20 rotate-[-2deg] items-center justify-center rounded-[48%_52%_55%_45%] bg-white text-[#c9a52e] shadow-[0_10px_25px_rgba(201,165,46,0.16)] ring-1 ring-[#f0dfaa] transition-transform group-hover:rotate-0">
                 <Users aria-hidden="true" strokeWidth={1.6} className="h-9 w-9" />
               </div>
               <h3 className="font-bold text-xl lg:text-2xl text-[#b99520] mb-4">未来の家族へ</h3>
-              <p className="story-copy text-[#5d4037] leading-[2] text-base lg:text-lg font-medium">数年後、一緒に読み返したときに、「こんなこともあったね」と笑い合える時間を届けます。</p>
+              <p className="story-copy text-[#5d4037] leading-[2] text-base lg:text-lg font-medium"><PhraseText phrases={['数年後、', '一緒に読み返したときに、', '「こんなこともあったね」と', '笑い合える時間を届けます。']} /></p>
             </motion.div>
           </div>
         </motion.div>
@@ -246,7 +254,7 @@ export default function CrowdfundingLP() {
         >
           <div className="text-center space-y-6 mb-16">
             <motion.h2 variants={fadeIn} className="text-3xl md:text-[2.5rem] font-serif font-bold text-[#5d4037] leading-tight">
-              育休コミュニティMIRAISとは
+              <PhraseText phrases={['育休コミュニティ', 'MIRAISとは']} />
             </motion.h2>
           </div>
           <div className="bg-white p-2 md:p-8 rounded-none md:rounded-[3rem] shadow-sm -mx-6 md:mx-0">
@@ -259,10 +267,9 @@ export default function CrowdfundingLP() {
           </div>
 
           <motion.div variants={fadeIn} className="mt-20 text-center">
-            <h3 className="text-2xl font-bold text-[#86bfa0] mb-8">過去のクラウドファンディング実績</h3>
+            <h3 className="text-2xl font-bold text-[#86bfa0] mb-8"><PhraseText phrases={['過去の', 'クラウドファンディング実績']} /></h3>
             <p className="text-lg text-[#5d4037] mb-10 font-medium leading-relaxed">
-              私たちはこれまでも、想いを形にするためにクラウドファンディングに挑戦し、<br className="hidden md:block" />
-              多くの方にご支援いただきプロジェクトを成功させてきました。
+              <PhraseText phrases={['私たちはこれまでも、', '想いを形にするために', 'クラウドファンディングに挑戦し、', '多くの方にご支援いただき', 'プロジェクトを成功させてきました。']} />
             </p>
             <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
               <a href="https://readyfor.jp/projects/ikukyu_real_book" target="_blank" rel="noopener noreferrer" className="group block p-8 bg-white rounded-2xl border-2 border-[#86bfa0]/30 hover:border-[#86bfa0] shadow-sm transition-all hover:-translate-y-1">
@@ -291,7 +298,7 @@ export default function CrowdfundingLP() {
         >
           <div className="text-center space-y-6 mb-16">
             <motion.h2 variants={fadeIn} className="text-3xl md:text-[2.5rem] font-serif font-bold text-[#5d4037] leading-tight">
-              「みんなで作っています」<br className="md:hidden"/>制作チームの紹介
+              <PhraseText phrases={['「みんなで', '作っています」', '制作チームの紹介']} />
             </motion.h2>
           </div>
           
@@ -326,31 +333,31 @@ export default function CrowdfundingLP() {
             <h3 className="text-center font-bold text-2xl text-[#5d4037] mb-12">制作メンバー</h3>
             <div className="space-y-6 text-[#5d4037]">
               <motion.div variants={fadeIn} className="bg-white p-6 rounded-2xl border-2 border-[#f9e28c] shadow-sm">
-                <h4 className="font-bold text-lg text-[#d4b028] mb-3 border-b border-[#fefce8] pb-2 flex items-center"><Smile className="w-5 h-5 mr-2" /> 編集・声集めメンバー</h4>
-                <p className="font-medium leading-relaxed">さーちゃん、しょうたん、ともりん、はあち、まどこ、まゆゆ、わさびーぬ</p>
+                <h4 className="font-bold text-lg text-[#d4b028] mb-3 border-b border-[#fefce8] pb-2 flex items-center"><Smile className="w-5 h-5 mr-2 shrink-0" /> <PhraseText phrases={['編集・声集めメンバー']} /></h4>
+                <p className="font-medium leading-relaxed"><PhraseText phrases={['さーちゃん、', 'しょうたん、', 'ともりん、', 'はあち、', 'まどこ、', 'まゆゆ、', 'わさびーぬ']} /></p>
               </motion.div>
               <motion.div variants={fadeIn} className="bg-white p-6 rounded-2xl border-2 border-[#f9e28c] shadow-sm">
-                <h4 className="font-bold text-lg text-[#d4b028] mb-3 border-b border-[#fefce8] pb-2 flex items-center"><Smile className="w-5 h-5 mr-2" /> 制作管理チーム</h4>
-                <p className="font-medium leading-relaxed">なっつん、あおさん</p>
+                <h4 className="font-bold text-lg text-[#d4b028] mb-3 border-b border-[#fefce8] pb-2 flex items-center"><Smile className="w-5 h-5 mr-2 shrink-0" /> <PhraseText phrases={['制作管理チーム']} /></h4>
+                <p className="font-medium leading-relaxed"><PhraseText phrases={['なっつん、', 'あおさん']} /></p>
               </motion.div>
               <motion.div variants={fadeIn} className="bg-white p-6 rounded-2xl border-2 border-[#f9e28c] shadow-sm">
-                <h4 className="font-bold text-lg text-[#d4b028] mb-3 border-b border-[#fefce8] pb-2 flex items-center"><Smile className="w-5 h-5 mr-2" /> イラスト・ビジュアルチーム</h4>
-                <p className="font-medium leading-relaxed">なっちゃん、ゆきちゃん、グラレコあいちゃん</p>
+                <h4 className="font-bold text-lg text-[#d4b028] mb-3 border-b border-[#fefce8] pb-2 flex items-center"><Smile className="w-5 h-5 mr-2 shrink-0" /> <PhraseText phrases={['イラスト・', 'ビジュアルチーム']} /></h4>
+                <p className="font-medium leading-relaxed"><PhraseText phrases={['なっちゃん、', 'ゆきちゃん、', 'グラレコあいちゃん']} /></p>
               </motion.div>
               <motion.div variants={fadeIn} className="bg-white p-6 rounded-2xl border-2 border-[#f9e28c] shadow-sm">
-                <h4 className="font-bold text-lg text-[#d4b028] mb-3 border-b border-[#fefce8] pb-2 flex items-center"><Smile className="w-5 h-5 mr-2" /> 広報・発信チーム</h4>
-                <p className="font-medium leading-relaxed">しょうたん、ゆきまる、ゆーみん、グラレコあいちゃん</p>
+                <h4 className="font-bold text-lg text-[#d4b028] mb-3 border-b border-[#fefce8] pb-2 flex items-center"><Smile className="w-5 h-5 mr-2 shrink-0" /> <PhraseText phrases={['広報・発信チーム']} /></h4>
+                <p className="font-medium leading-relaxed"><PhraseText phrases={['しょうたん、', 'ゆきまる、', 'ゆーみん、', 'グラレコあいちゃん']} /></p>
               </motion.div>
               <motion.div variants={fadeIn} className="bg-white p-6 rounded-2xl border-2 border-[#f9e28c] shadow-sm">
-                <h4 className="font-bold text-lg text-[#d4b028] mb-3 border-b border-[#fefce8] pb-2 flex items-center"><Smile className="w-5 h-5 mr-2" /> クラファン・出版調査チーム</h4>
-                <p className="font-medium leading-relaxed">なっつん、まどこ、ゆきまる、ゆんちゃん</p>
+                <h4 className="font-bold text-lg text-[#d4b028] mb-3 border-b border-[#fefce8] pb-2 flex items-center"><Smile className="w-5 h-5 mr-2 shrink-0" /> <PhraseText phrases={['クラファン・', '出版調査チーム']} /></h4>
+                <p className="font-medium leading-relaxed"><PhraseText phrases={['なっつん、', 'まどこ、', 'ゆきまる、', 'ゆんちゃん']} /></p>
               </motion.div>
             </div>
             <div className="max-w-4xl mx-auto pt-16">
               <div className="rounded-[2rem] overflow-hidden shadow-lg border-[8px] border-white transform md:-rotate-1">
                 <img src="/team.jpg" alt="MIRAISえほん制作チーム" className="w-full h-auto object-cover" />
               </div>
-              <p className="text-center text-amber-600 font-bold tracking-widest text-sm mt-6">多様なメンバーがそれぞれの強みを活かして制作しています。</p>
+              <p className="text-center text-amber-600 font-bold tracking-widest text-sm mt-6"><PhraseText phrases={['多様なメンバーが', 'それぞれの強みを活かして', '制作しています。']} /></p>
             </div>
           </div>
         </motion.div>
@@ -370,15 +377,15 @@ export default function CrowdfundingLP() {
           </div>
           <div className="grid md:grid-cols-2 gap-12 items-center bg-white p-10 md:p-16 rounded-[3rem] shadow-sm">
             <motion.div variants={fadeIn} className="space-y-8">
-              <h3 className="text-2xl md:text-3xl font-serif font-bold text-[#5d4037]">MIRAISえほん 第1弾<br/><span className="text-lg text-rose-400 font-sans font-normal mt-2 block">（タイトルは制作中）</span></h3>
+              <h3 className="text-2xl md:text-3xl font-serif font-bold text-[#5d4037]"><PhraseText phrases={['MIRAISえほん', ' 第1弾']} /><br/><span className="text-lg text-rose-400 font-sans font-normal mt-2 block">（タイトルは制作中）</span></h3>
               <ul className="space-y-5 text-[#5d4037] text-lg">
-                <li className="flex items-start"><CheckCircle className="w-6 h-6 text-rose-400 mr-4 shrink-0 mt-1" /> <span><strong>対象年齢:</strong> 4〜6歳のお子さんと親御さん</span></li>
-                <li className="flex items-start"><CheckCircle className="w-6 h-6 text-rose-400 mr-4 shrink-0 mt-1" /> <span><strong>ページ数・仕様:</strong> 24ページ前後・ソフトカバー</span></li>
-                <li className="flex items-start"><CheckCircle className="w-6 h-6 text-rose-400 mr-4 shrink-0 mt-1" /> <span><strong>読み聞かせ時間:</strong> 寝る前の5分間</span></li>
-                <li className="flex items-start"><CheckCircle className="w-6 h-6 text-rose-400 mr-4 shrink-0 mt-1" /> <span><strong>主人公:</strong> うさぎの「ベイビールナ」</span></li>
+                <li className="flex items-start"><CheckCircle className="w-6 h-6 text-rose-400 mr-4 shrink-0 mt-1" /> <span><strong>対象年齢:</strong>{' '}<PhraseText phrases={['4〜6歳のお子さんと', '親御さん']} /></span></li>
+                <li className="flex items-start"><CheckCircle className="w-6 h-6 text-rose-400 mr-4 shrink-0 mt-1" /> <span><strong>ページ数・仕様:</strong>{' '}<PhraseText phrases={['24ページ前後・', 'ソフトカバー']} /></span></li>
+                <li className="flex items-start"><CheckCircle className="w-6 h-6 text-rose-400 mr-4 shrink-0 mt-1" /> <span><strong>読み聞かせ時間:</strong>{' '}<PhraseText phrases={['寝る前の5分間']} /></span></li>
+                <li className="flex items-start"><CheckCircle className="w-6 h-6 text-rose-400 mr-4 shrink-0 mt-1" /> <span><strong>登場キャラクター:</strong>{' '}<PhraseText phrases={['うさぎの', '「ベイビールナ」']} /></span></li>
               </ul>
               <div className="p-6 md:p-8 bg-[#fef5f7] rounded-2xl text-[#5d4037] font-medium leading-relaxed shadow-inner">
-                <strong>世界観:</strong> やさしくて思いやりがあるけど、ちょっぴりあわてんぼうなルナ。「ちゃんとしたい！」って頑張りすぎて空回りしちゃう姿は、この本を読む親御さんに少し似ています。
+                <strong>ルナの役割:</strong>{' '}<PhraseText phrases={['親子の間に座る、', '「小さな気持ちの通訳者」です。', 'まだ言葉になっていない', '気持ちを見つめ、', '正解を教えたり、', '問題を解決したりするのではなく、', 'うまくできなかった日の奥にも', '残っている「大好き」を、', '親子が自分たちで', '見つけられるよう、', 'そっと寄り添います。']} />
               </div>
             </motion.div>
             <motion.div variants={fadeIn} className="text-center relative group">
@@ -407,11 +414,10 @@ export default function CrowdfundingLP() {
         >
           <div className="text-center space-y-6">
             <motion.h2 variants={fadeIn} className="text-3xl md:text-[2.5rem] font-serif font-bold text-[#5d4037] leading-tight">
-              この絵本は、<br className="md:hidden" />みんなで育てています。
+              <PhraseText phrases={['この絵本は、', 'みんなで', '育てています。']} />
             </motion.h2>
             <p className="text-lg text-[#5d4037] leading-relaxed max-w-2xl mx-auto font-medium pt-4">
-              ここまでに、数十回のミーティングを重ねました。<br />
-              親たちが自分の本音を書き出し、何度も話し合い、イラストを描き、ようやくここまで来ました。
+              <PhraseText phrases={['ここまでに、数十回の', 'ミーティングを重ねました。', '親たちが自分の本音を書き出し、', '何度も話し合い、', 'イラストを描き、', 'ようやくここまで来ました。']} />
             </p>
           </div>
 
@@ -449,43 +455,42 @@ export default function CrowdfundingLP() {
         >
           <div className="text-center space-y-6">
             <motion.h2 variants={fadeIn} className="text-3xl md:text-[2.5rem] font-serif font-bold text-[#5d4037] leading-tight">
-              120万円は「ゴール」ではなく、<br/>
-              プロジェクトを育てるスタートです。
+              <PhraseText phrases={['120万円は', '「ゴール」ではなく、', 'プロジェクトを育てる', 'スタートです。']} />
             </motion.h2>
           </div>
 
           <motion.div variants={fadeIn}>
-            <h3 className="text-2xl md:text-3xl font-bold text-[#5d4037] text-center mb-12">ロードマップ：120万円で何ができるか</h3>
+            <h3 className="text-2xl md:text-3xl font-bold text-[#5d4037] text-center mb-12"><PhraseText phrases={['ロードマップ：', '120万円で何ができるか']} /></h3>
             <div className="max-w-2xl mx-auto space-y-6">
               <div className="flex items-start bg-white p-6 md:p-8 rounded-3xl border-l-8 border-rose-400 shadow-sm">
                 <Heart className="w-10 h-10 text-rose-400 shrink-0 mr-6 mt-1" />
                 <div>
-                  <h4 className="text-xl md:text-2xl font-bold text-[#5d4037] mb-3">120万円：初版制作・発送（ファーストゴール）</h4>
-                  <p className="text-[#5d4037] text-lg leading-relaxed">第1弾絵本を制作し、初版200冊を印刷・発送。プロジェクトを次につなげる広報活動を行います。</p>
+                  <h4 className="text-xl md:text-2xl font-bold text-[#5d4037] mb-3"><PhraseText phrases={['120万円：', '初版制作・発送', '（ファーストゴール）']} /></h4>
+                  <p className="text-[#5d4037] text-lg leading-relaxed"><PhraseText phrases={['第1弾絵本を制作し、', '初版200冊を印刷・発送。', 'プロジェクトを', '次につなげる', '広報活動を行います。']} /></p>
                 </div>
               </div>
               <div className="flex items-start bg-white p-6 md:p-8 rounded-3xl border-l-8 border-amber-400 shadow-sm">
                 <Star className="w-10 h-10 text-amber-400 shrink-0 mr-6 mt-1" />
                 <div>
-                  <h4 className="text-xl md:text-2xl font-bold text-[#5d4037] mb-3">ストレッチゴール：ハードカバー化</h4>
-                  <p className="text-[#5d4037] text-lg leading-relaxed">より長く、美しく残せるように絵本のハードカバー化を実現します。</p>
+                  <h4 className="text-xl md:text-2xl font-bold text-[#5d4037] mb-3"><PhraseText phrases={['ストレッチゴール：', 'ハードカバー化']} /></h4>
+                  <p className="text-[#5d4037] text-lg leading-relaxed"><PhraseText phrases={['より長く、', '美しく残せるように', '絵本のハードカバー化を', '実現します。']} /></p>
                 </div>
               </div>
               <div className="flex items-start bg-white p-6 md:p-8 rounded-3xl border-l-8 border-emerald-400 shadow-sm">
                 <Users className="w-10 h-10 text-emerald-400 shrink-0 mr-6 mt-1" />
                 <div>
-                  <h4 className="text-xl md:text-2xl font-bold text-[#5d4037] mb-3">その先：寄贈・販売展開・第2弾へ</h4>
-                  <p className="text-[#5d4037] text-lg leading-relaxed">絵本を必要とする施設への寄贈、一般販売展開、そして新たなテーマでの第2弾制作へと活動を広げます。</p>
+                  <h4 className="text-xl md:text-2xl font-bold text-[#5d4037] mb-3"><PhraseText phrases={['その先：', '寄贈・販売展開・', '第2弾へ']} /></h4>
+                  <p className="text-[#5d4037] text-lg leading-relaxed"><PhraseText phrases={['絵本を必要とする', '施設への寄贈、', '一般販売展開、', 'そして新たなテーマでの', '第2弾制作へと', '活動を広げます。']} /></p>
                 </div>
               </div>
             </div>
 
             <div className="text-center mt-16 space-y-6">
               <p className="text-2xl md:text-3xl font-bold text-[#f0a8b9] leading-relaxed">
-                このプロジェクトは、<br/>絵本をつくって終わりではありません。
+                <PhraseText phrases={['このプロジェクトは、', '絵本をつくって', '終わりではありません。']} />
               </p>
               <p className="text-xl text-[#5d4037] leading-relaxed max-w-2xl mx-auto">
-                MIRAISえほんをきっかけに、親の気持ちを未来へ残す文化を育てていきます。
+                <PhraseText phrases={['MIRAISえほんをきっかけに、', '親の気持ちを未来へ残す', '文化を育てていきます。']} />
               </p>
             </div>
           </motion.div>
@@ -501,15 +506,15 @@ export default function CrowdfundingLP() {
         >
           <div className="text-center space-y-6">
             <motion.h2 variants={fadeIn} className="text-3xl md:text-[2.5rem] font-serif font-bold text-[#5d4037]">
-              応援の声が届いています
+              <PhraseText phrases={['応援の声が', '届いています']} />
             </motion.h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid max-w-xl mx-auto gap-8 lg:max-w-none lg:grid-cols-3">
             <motion.div variants={fadeIn} className="bg-white p-8 rounded-[2rem] shadow-sm relative">
               <MessagesSquare className="absolute top-6 right-6 w-8 h-8 text-[#f9e28c] opacity-50" />
               <p className="text-[#5d4037] font-bold text-lg mb-6 relative z-10 leading-relaxed">
-                「この絵本が完成したら、絶対に自分の子どもにも読ませたいです！親の等身大の気持ちがこんなに優しく表現されているなんて感動しました。」
+                <PhraseText phrases={['「この絵本が完成したら、', '絶対に自分の子どもにも', '読ませたいです！', '親の等身大の気持ちが', 'こんなに優しく', '表現されているなんて', '感動しました。」']} />
               </p>
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-[#f4f7f5] rounded-full flex items-center justify-center text-[#86bfa0] font-bold">M</div>
@@ -523,7 +528,7 @@ export default function CrowdfundingLP() {
             <motion.div variants={fadeIn} className="bg-white p-8 rounded-[2rem] shadow-sm relative">
               <MessagesSquare className="absolute top-6 right-6 w-8 h-8 text-[#f9e28c] opacity-50" />
               <p className="text-[#5d4037] font-bold text-lg mb-6 relative z-10 leading-relaxed">
-                「いつも上手く笑えなくて自己嫌悪に陥る日々ですが、この絵本ラフを読んで救われました。私たちに必要なのは、こういう『完璧じゃない自分を肯定する本』です。」
+                <PhraseText phrases={['「いつも上手く笑えなくて', '自己嫌悪に陥る日々ですが、', 'この絵本ラフを読んで', '救われました。', '私たちに必要なのは、', 'こういう', '『完璧じゃない', '自分を肯定する本』', 'です。」']} />
               </p>
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-[#f4f7f5] rounded-full flex items-center justify-center text-[#86bfa0] font-bold">K</div>
@@ -537,7 +542,7 @@ export default function CrowdfundingLP() {
             <motion.div variants={fadeIn} className="bg-white p-8 rounded-[2rem] shadow-sm relative">
               <MessagesSquare className="absolute top-6 right-6 w-8 h-8 text-[#f9e28c] opacity-50" />
               <p className="text-[#5d4037] font-bold text-lg mb-6 relative z-10 leading-relaxed">
-                「MIRAISの皆さんの熱量がすごい！ただの絵本制作ではなく、一つのムーブメントを作ろうとする姿勢に胸を打たれました。全力で応援します！」
+                <PhraseText phrases={['「MIRAISの皆さんの', '熱量がすごい！', 'ただの絵本制作ではなく、', '一つのムーブメントを', '作ろうとする姿勢に', '胸を打たれました。', '全力で応援します！」']} />
               </p>
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-[#f4f7f5] rounded-full flex items-center justify-center text-[#86bfa0] font-bold">A</div>
@@ -559,7 +564,7 @@ export default function CrowdfundingLP() {
           className="max-w-4xl mx-auto space-y-16"
         >
           <div className="bg-[#f4f7f5] p-8 md:p-16 rounded-[3rem] shadow-sm">
-            <h3 className="text-2xl md:text-3xl font-bold text-[#86bfa0] text-center mb-10">資金の使い道（目安）</h3>
+            <h3 className="text-2xl md:text-3xl font-bold text-[#86bfa0] text-center mb-10"><PhraseText phrases={['資金の使い道', '（目安）']} /></h3>
             <div className="grid md:grid-cols-2 gap-12 items-center">
               {/* 円グラフ */}
               <div className="flex justify-center py-6">
@@ -572,21 +577,21 @@ export default function CrowdfundingLP() {
               {/* 凡例と注記 */}
               <div className="space-y-8">
                 <div className="space-y-4 text-[#5d4037] text-lg font-medium leading-relaxed">
-                  <div className="flex items-center"><div className="w-4 h-4 bg-rose-400 rounded-full mr-3 shrink-0"></div> MIRAIS入会・リターン提供費</div>
-                  <div className="flex items-center"><div className="w-4 h-4 bg-emerald-400 rounded-full mr-3 shrink-0"></div> 印刷・製本費</div>
-                  <div className="flex items-center"><div className="w-4 h-4 bg-amber-400 rounded-full mr-3 shrink-0"></div> 増刷・寄贈・今後の展開</div>
-                  <div className="flex items-center"><div className="w-4 h-4 bg-blue-400 rounded-full mr-3 shrink-0"></div> READYFOR手数料</div>
-                  <div className="flex items-center"><div className="w-4 h-4 bg-purple-400 rounded-full mr-3 shrink-0"></div> 広報・発送・運営費</div>
-                  <div className="flex items-center"><div className="w-4 h-4 bg-slate-400 rounded-full mr-3 shrink-0"></div> 絵本制作・編集費</div>
+                  <div className="flex items-center"><div className="w-4 h-4 bg-rose-400 rounded-full mr-3 shrink-0"></div><span><PhraseText phrases={['MIRAIS入会・', 'リターン提供費']} /></span></div>
+                  <div className="flex items-center"><div className="w-4 h-4 bg-emerald-400 rounded-full mr-3 shrink-0"></div><span><PhraseText phrases={['印刷・製本費']} /></span></div>
+                  <div className="flex items-center"><div className="w-4 h-4 bg-amber-400 rounded-full mr-3 shrink-0"></div><span><PhraseText phrases={['増刷・寄贈・', '今後の展開']} /></span></div>
+                  <div className="flex items-center"><div className="w-4 h-4 bg-blue-400 rounded-full mr-3 shrink-0"></div><span><PhraseText phrases={['READYFOR手数料']} /></span></div>
+                  <div className="flex items-center"><div className="w-4 h-4 bg-purple-400 rounded-full mr-3 shrink-0"></div><span><PhraseText phrases={['広報・発送・運営費']} /></span></div>
+                  <div className="flex items-center"><div className="w-4 h-4 bg-slate-400 rounded-full mr-3 shrink-0"></div><span><PhraseText phrases={['絵本制作・編集費']} /></span></div>
                 </div>
 
                 <div className="bg-white p-6 rounded-2xl border border-emerald-100">
                   <p className="text-sm text-[#5d4037] leading-relaxed mb-4">
-                    ※現在の想定リターン構成に基づく目安であり、支援内容によって割合は変動する前提です。
+                    <PhraseText phrases={['※現在の想定リターン構成に', '基づく目安であり、', '支援内容によって', '割合は変動する前提です。']} />
                   </p>
                   <div className="p-4 bg-[#fefce8] border border-[#f9e28c] rounded-xl text-xs text-[#5d4037] leading-relaxed">
                     <strong>注記：</strong><br/>
-                    「MIRAIS入会＋えほん応援コース」に含まれる参加費は、コミュニティの運営および活動提供に活用します。それ以外のご支援は、MIRAISえほん制作・リターン提供・プロジェクト運営に大切に活用します。
+                    <PhraseText phrases={['「MIRAIS入会＋', 'えほん応援コース」に', '含まれる参加費は、', 'コミュニティの運営および', '活動提供に活用します。', 'それ以外のご支援は、', 'MIRAISえほん制作・', 'リターン提供・', 'プロジェクト運営に', '大切に活用します。']} />
                   </div>
                 </div>
               </div>
@@ -606,10 +611,10 @@ export default function CrowdfundingLP() {
         >
           <div className="text-center space-y-4 md:space-y-6">
             <motion.h2 variants={fadeIn} className="text-3xl md:text-[2.5rem] font-serif font-bold text-[#5d4037]">
-              あなたに合った応援のかたち
+              <PhraseText phrases={['あなたに合った', '応援のかたち']} />
             </motion.h2>
             <motion.p variants={fadeIn} className="text-[#795548] font-medium text-base md:text-lg">
-              どのコースも、「MIRAISえほんの制作を応援し、その証を受け取る」コースです。
+              <PhraseText phrases={['どのコースも、', '「MIRAISえほんの制作を応援し、', 'その証を受け取る」コースです。']} />
             </motion.p>
           </div>
 
@@ -625,7 +630,7 @@ export default function CrowdfundingLP() {
                 <div className="text-2xl md:text-3xl font-bold text-rose-500 mt-2 md:mt-4">¥5,000</div>
               </div>
               <div className="text-[#5d4037] mb-6 flex-grow leading-relaxed space-y-3 md:space-y-4 text-sm md:text-base">
-                <p>完成した絵本1冊とお礼のお手紙をお届けします。</p>
+                <p><PhraseText phrases={['完成した絵本1冊と', 'お礼のお手紙をお届けします。']} /></p>
               </div>
               <a href="https://readyfor.jp/projects/mirais-storybook?sns_share_token=e10485c4437094f6cedc&utm_source=pj_share_url&utm_medium=social" target="_blank" rel="noopener noreferrer" className="w-full py-3 md:py-4 rounded-xl bg-[#f0a8b9] text-white font-bold hover:bg-rose-400 shadow-md transition-all hover:-translate-y-1 block text-center">
                 支援する
@@ -639,7 +644,7 @@ export default function CrowdfundingLP() {
                 <div className="text-2xl md:text-3xl font-bold text-[#86bfa0] mt-2 md:mt-4">¥10,000</div>
               </div>
               <p className="text-[#5d4037] mb-6 flex-grow leading-relaxed text-sm md:text-base">
-                絵本にお名前を掲載いたします。（絵本本体のお届けはありません）
+                <PhraseText phrases={['絵本にお名前を掲載いたします。', '（絵本本体のお届けは', 'ありません）']} />
               </p>
               <a href="https://readyfor.jp/projects/mirais-storybook?sns_share_token=e10485c4437094f6cedc&utm_source=pj_share_url&utm_medium=social" target="_blank" rel="noopener noreferrer" className="w-full py-3 md:py-4 rounded-xl bg-[#eef7f2] text-[#5d4037] font-bold hover:bg-[#cbe8d8] transition-colors block text-center">
                 支援する
@@ -656,7 +661,7 @@ export default function CrowdfundingLP() {
                 <div className="text-2xl md:text-3xl font-bold text-[#86bfa0] mt-2 md:mt-4">¥12,000</div>
               </div>
               <p className="text-[#5d4037] mb-6 flex-grow leading-relaxed text-sm md:text-base">
-                絵本3冊をお届けします。ご友人やごきょうだいへのプレゼントに。
+                <PhraseText phrases={['絵本3冊をお届けします。', 'ご友人やごきょうだいへの', 'プレゼントに。']} />
               </p>
               <a href="https://readyfor.jp/projects/mirais-storybook?sns_share_token=e10485c4437094f6cedc&utm_source=pj_share_url&utm_medium=social" target="_blank" rel="noopener noreferrer" className="w-full py-3 md:py-4 rounded-xl bg-[#eef7f2] text-[#5d4037] font-bold hover:bg-[#cbe8d8] transition-colors block text-center">
                 支援する
@@ -670,7 +675,7 @@ export default function CrowdfundingLP() {
                 <div className="text-2xl md:text-3xl font-bold text-[#d4b028] mt-2 md:mt-4">¥20,000</div>
               </div>
               <p className="text-[#5d4037] mb-6 flex-grow leading-relaxed text-sm md:text-base">
-                絵本5冊をお届けします。周りの方々に配りたい方へ。
+                <PhraseText phrases={['絵本5冊をお届けします。', '周りの方々に配りたい方へ。']} />
               </p>
               <a href="https://readyfor.jp/projects/mirais-storybook?sns_share_token=e10485c4437094f6cedc&utm_source=pj_share_url&utm_medium=social" target="_blank" rel="noopener noreferrer" className="w-full py-3 md:py-4 rounded-xl bg-[#fefce8] text-[#5d4037] font-bold hover:bg-[#f9e28c] transition-colors block text-center">
                 支援する
@@ -687,7 +692,7 @@ export default function CrowdfundingLP() {
                 <div className="text-2xl md:text-3xl font-bold text-[#d4b028] mt-2 md:mt-4">¥40,000</div>
               </div>
               <p className="text-[#5d4037] mb-6 flex-grow leading-relaxed text-sm md:text-base">
-                絵本10冊をお届けし、絵本にお名前を掲載いたします。
+                <PhraseText phrases={['絵本10冊をお届けし、', '絵本にお名前を掲載いたします。']} />
               </p>
               <a href="https://readyfor.jp/projects/mirais-storybook?sns_share_token=e10485c4437094f6cedc&utm_source=pj_share_url&utm_medium=social" target="_blank" rel="noopener noreferrer" className="w-full py-3 md:py-4 rounded-xl bg-[#fefce8] text-[#5d4037] font-bold hover:bg-[#f9e28c] transition-colors block text-center">
                 支援する
@@ -701,7 +706,7 @@ export default function CrowdfundingLP() {
                 <div className="text-2xl md:text-3xl font-bold text-slate-500 mt-2 md:mt-4">¥30,000</div>
               </div>
               <p className="text-[#5d4037] mb-6 flex-grow leading-relaxed text-sm md:text-base">
-                MIRAISのコミュニティに参加・再参加できる権利と、絵本応援がセットになったプランです。
+                <PhraseText phrases={['MIRAISのコミュニティに', '参加・再参加できる権利と、', '絵本応援がセットになった', 'プランです。']} />
               </p>
               <a href="https://readyfor.jp/projects/mirais-storybook?sns_share_token=e10485c4437094f6cedc&utm_source=pj_share_url&utm_medium=social" target="_blank" rel="noopener noreferrer" className="w-full py-3 md:py-4 rounded-xl bg-slate-100 text-slate-600 font-bold hover:bg-slate-200 transition-colors block text-center">
                 支援する
@@ -724,20 +729,20 @@ export default function CrowdfundingLP() {
         >
           <div className="text-center space-y-4 md:space-y-6">
             <motion.h2 variants={fadeIn} className="text-3xl md:text-[2.5rem] font-serif font-bold text-[#5d4037]">
-              応援してくださる皆様
+              <PhraseText phrases={['応援してくださる', '皆様']} />
             </motion.h2>
             <p className="text-[#795548] font-medium text-base md:text-lg">
-              本プロジェクトをサポートしてくださる企業・個人の皆様です。
+              <PhraseText phrases={['本プロジェクトを', 'サポートしてくださる', '企業・個人の皆様です。']} />
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid max-w-xl mx-auto grid-cols-1 gap-6 md:gap-8 lg:max-w-none lg:grid-cols-3">
             {/* 個人スポンサー 30,000円 */}
             <motion.div variants={fadeIn} className="bg-white p-6 md:p-8 rounded-[2rem] border border-slate-200 shadow-md flex flex-col text-center">
               <h3 className="font-bold text-xl md:text-2xl text-[#5d4037] mb-2 md:mb-4">個人スポンサー</h3>
               <div className="text-3xl md:text-4xl font-bold text-slate-600 mb-6 md:mb-8">¥30,000</div>
               <p className="text-[#5d4037] flex-grow leading-relaxed mb-6 md:mb-8 text-sm md:text-base">
-                プロジェクトを個人として応援いただける方向けのプランです。<br/>お名前等の掲載を予定しております。
+                <PhraseText phrases={['プロジェクトを個人として', '応援いただける方向けの', 'プランです。', 'お名前等の掲載を', '予定しております。']} />
               </p>
               <a href="https://readyfor.jp/projects/mirais-storybook?sns_share_token=e10485c4437094f6cedc&utm_source=pj_share_url&utm_medium=social" target="_blank" rel="noopener noreferrer" className="w-full py-3 md:py-4 rounded-xl bg-slate-800 text-white font-bold hover:bg-slate-700 transition-colors block text-center">
                 支援する
@@ -749,7 +754,7 @@ export default function CrowdfundingLP() {
               <h3 className="font-bold text-xl md:text-2xl text-[#5d4037] mb-2 md:mb-4">法人・団体スポンサー</h3>
               <div className="text-3xl md:text-4xl font-bold text-slate-600 mb-6 md:mb-8">¥50,000</div>
               <p className="text-[#5d4037] flex-grow leading-relaxed mb-6 md:mb-8 text-sm md:text-base">
-                企業・団体として応援いただける方向けのプランです。<br/>ロゴや社名等の掲載（小）を予定しております。
+                <PhraseText phrases={['企業・団体として', '応援いただける方向けの', 'プランです。', 'ロゴや社名等の掲載（小）を', '予定しております。']} />
               </p>
               <a href="https://readyfor.jp/projects/mirais-storybook?sns_share_token=e10485c4437094f6cedc&utm_source=pj_share_url&utm_medium=social" target="_blank" rel="noopener noreferrer" className="w-full py-3 md:py-4 rounded-xl bg-slate-800 text-white font-bold hover:bg-slate-700 transition-colors block text-center">
                 支援する
@@ -762,7 +767,7 @@ export default function CrowdfundingLP() {
               <h3 className="font-bold text-xl md:text-2xl mb-2 md:mb-4 text-rose-100">法人・団体スポンサー</h3>
               <div className="text-3xl md:text-4xl font-bold text-white mb-6 md:mb-8">¥100,000</div>
               <p className="flex-grow leading-relaxed mb-6 md:mb-8 text-rose-50/90 text-sm md:text-base">
-                強力にバックアップしていただける方向けの特別プランです。<br/>ロゴや社名等の掲載（大）などを予定しております。
+                <PhraseText phrases={['強力にバックアップして', 'いただける方向けの', '特別プランです。', 'ロゴや社名等の掲載（大）などを', '予定しております。']} />
               </p>
               <a href="https://readyfor.jp/projects/mirais-storybook?sns_share_token=e10485c4437094f6cedc&utm_source=pj_share_url&utm_medium=social" target="_blank" rel="noopener noreferrer" className="w-full py-3 md:py-4 rounded-xl bg-white text-[#5d4037] font-bold hover:bg-rose-50 transition-colors block text-center">
                 支援する
@@ -787,32 +792,32 @@ export default function CrowdfundingLP() {
         >
           <motion.div variants={fadeIn} className="bg-white/80 backdrop-blur-sm p-8 md:p-16 rounded-[3rem] border-4 border-rose-100 shadow-xl">
             <h2 className="text-3xl md:text-[2.5rem] font-serif font-bold text-[#f0a8b9] mb-8 leading-tight">
-              LINEオープンチャットの<br className="md:hidden"/>ご案内
+              <PhraseText phrases={['LINE', 'オープンチャットの', 'ご案内']} />
             </h2>
             <div className="space-y-6 text-[#5d4037] text-lg md:text-xl leading-[2.2] font-medium">
               <p>
-                MIRAISえほんの最新情報や、<br className="md:hidden"/>クラウドファンディングのお知らせを受け取りたい方へ。
+                <PhraseText phrases={['MIRAISえほんの最新情報や、', 'クラウドファンディングの', 'お知らせを受け取りたい方へ。']} />
               </p>
               
               <div className="bg-[#fefce8] p-6 md:p-8 rounded-2xl inline-block text-left my-8 border border-[#f9e28c]">
                 <ul className="space-y-4">
                   <li className="flex items-start">
                     <CheckCircle className="w-6 h-6 text-rose-400 mr-3 shrink-0 mt-1" /> 
-                    <span>クラウドファンディング公開の<strong>お知らせ</strong>をいち早くお届けします。</span>
+                    <span><PhraseText phrases={['クラウドファンディング公開の']} /><strong><PhraseText phrases={['お知らせ']} /></strong><PhraseText phrases={['をいち早く', 'お届けします。']} /></span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="w-6 h-6 text-rose-400 mr-3 shrink-0 mt-1" /> 
-                    <span>制作の<strong>裏側や進捗</strong>もお届けします。</span>
+                    <span><PhraseText phrases={['制作の']} /><strong><PhraseText phrases={['裏側や進捗']} /></strong><PhraseText phrases={['もお届けします。']} /></span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="w-6 h-6 text-rose-400 mr-3 shrink-0 mt-1" /> 
-                    <span><strong>匿名・無料</strong>でいつでも参加・退出できます。</span>
+                    <span><strong><PhraseText phrases={['匿名・無料']} /></strong><PhraseText phrases={['でいつでも', '参加・退出できます。']} /></span>
                   </li>
                 </ul>
               </div>
 
               <p className="font-bold text-[#86bfa0] text-xl md:text-2xl pt-4">
-                一緒に、この絵本の1ページ目を見守ってください。
+                <PhraseText phrases={['一緒に、', 'この絵本の1ページ目を', '見守ってください。']} />
               </p>
             </div>
             
@@ -852,10 +857,10 @@ export default function CrowdfundingLP() {
                 </div>
               </div>
               <div className="space-y-6 text-lg text-[#5d4037] leading-relaxed">
-                <p>私たち親から子への溢れるほどの愛が絵本を通してまっすぐ子どもたちへ伝わり、愛されていた確かな記憶と共にこれから未来を生きる親子を温かく繋いでいく一冊へ——。</p>
-                <p>そんな願いを込めて挑戦しています。</p>
-                <p>一人でも多くのママパパと子どもたちへ届けるため、最後まで誠心誠意走り抜けます。</p>
-                <p className="font-bold">ぜひ私たちMIRAISと一緒に、仲間としてこの温かい輪を広げていただけたら幸いです。</p>
+                <p><PhraseText phrases={['私たち親から子への', '溢れるほどの愛が', '絵本を通して', 'まっすぐ子どもたちへ伝わり、', '愛されていた確かな記憶と共に', 'これから未来を生きる親子を', '温かく繋いでいく一冊へ——。']} /></p>
+                <p><PhraseText phrases={['そんな願いを込めて', '挑戦しています。']} /></p>
+                <p><PhraseText phrases={['一人でも多くの', 'ママパパと子どもたちへ', '届けるため、', '最後まで誠心誠意', '走り抜けます。']} /></p>
+                <p className="font-bold"><PhraseText phrases={['ぜひ私たちMIRAISと一緒に、', '仲間として', 'この温かい輪を広げて', 'いただけたら幸いです。']} /></p>
               </div>
             </motion.div>
 
@@ -871,10 +876,10 @@ export default function CrowdfundingLP() {
                 </div>
               </div>
               <div className="space-y-6 text-lg text-[#5d4037] leading-relaxed">
-                <p>私は、双子を育てる親です。<br/>子どもたちを大切に思っているのに、寝顔を見ながら、<br/>「今日はもっとできたんじゃないかな」<br/>と自分を責めた夜が何度もありました。</p>
-                <p>そんな夜があったからこそ、この絵本だけは形にしたいと思いました。<br/>あの日の私のように、自分を責めている誰かに届けたいからです。</p>
-                <p>この挑戦は、最後までやり切ります。<br/>でも、一人では作れません。<br/>一緒に迷い、一緒に考え、一緒に完成を喜びたい。</p>
-                <p className="font-bold">「本ができたら知っていた」ではなく、<br/>「本ができるまで、一緒に育てた」<br/>そんな一冊にしたいと思っています。</p>
+                <p><PhraseText phrases={['私は、双子を育てる親です。', '子どもたちを', '大切に思っているのに、', '寝顔を見ながら、', '「今日はもっと', 'できたんじゃないかな」', 'と自分を責めた夜が', '何度もありました。']} /></p>
+                <p><PhraseText phrases={['そんな夜があったからこそ、', 'この絵本だけは', '形にしたいと思いました。', 'あの日の私のように、', '自分を責めている誰かに', '届けたいからです。']} /></p>
+                <p><PhraseText phrases={['この挑戦は、', '最後までやり切ります。', 'でも、一人では作れません。', '一緒に迷い、', '一緒に考え、', '一緒に完成を喜びたい。']} /></p>
+                <p className="font-bold"><PhraseText phrases={['「本ができたら知っていた」', 'ではなく、', '「本ができるまで、', '一緒に育てた」', 'そんな一冊にしたいと', '思っています。']} /></p>
               </div>
             </motion.div>
           </div>
@@ -895,11 +900,11 @@ export default function CrowdfundingLP() {
           </motion.div>
           
           <motion.p variants={fadeIn} className="text-3xl md:text-5xl font-serif font-bold text-[#5d4037] mb-12 leading-tight">
-            うまくできない日も、<br className="md:hidden"/>大好きは残せる。
+            <PhraseText phrases={['うまくできない日も、', '大好きは残せる。']} />
           </motion.p>
           
           <motion.p variants={fadeIn} className="text-xl md:text-2xl text-[#795548] font-bold mb-16 leading-relaxed">
-            親心を未来へ残す一冊を、<br className="hidden md:block"/>一緒に育ててください。
+            <PhraseText phrases={['親心を未来へ残す一冊を、', '一緒に育ててください。']} />
           </motion.p>
           
           <motion.div variants={fadeIn} className="pt-8">

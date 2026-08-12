@@ -5,8 +5,8 @@
   --font-zen: var(--font-zen-maru);
 }
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fffdf8;
+  --foreground: #5d4037;
 }
 
 @theme inline {
@@ -16,15 +16,44 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-zen-maru), system-ui, sans-serif;
+  line-height: 1.8;
+  font-feature-settings: "palt";
+  overflow-wrap: anywhere;
+}
+
+.font-serif {
+  font-feature-settings: "palt";
+  letter-spacing: 0.035em;
+}
+
+.story-title {
+  text-wrap: balance;
+  word-break: auto-phrase;
+}
+
+.story-copy {
+  text-wrap: pretty;
+  word-break: auto-phrase;
+}
+
+.paper-texture {
+  background-image:
+    radial-gradient(circle at 18% 20%, rgb(240 168 185 / 12%) 0 2px, transparent 3px),
+    radial-gradient(circle at 82% 72%, rgb(134 191 160 / 10%) 0 2px, transparent 3px),
+    linear-gradient(115deg, rgb(255 255 255 / 58%), transparent 42%);
+  background-size: 42px 42px, 54px 54px, 100% 100%;
+}
+
+@media (max-width: 767px) {
+  body {
+    line-height: 1.75;
+  }
+
+  .font-serif {
+    letter-spacing: 0.02em;
+  }
 }

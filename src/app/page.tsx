@@ -1,10 +1,11 @@
 "use client";
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { motion, Variants, AnimatePresence } from 'framer-motion';
 import { 
   Star, BookOpen, Camera, MessageCircle,
-  Users, CheckCircle, ArrowRight, Heart, PenTool, Image as ImageIcon, MessagesSquare, Smile, X
+  Users, CheckCircle, ArrowRight, Heart, PenTool, MessagesSquare, Smile, X
 } from 'lucide-react';
 
 const fadeIn: Variants = {
@@ -24,43 +25,64 @@ export default function CrowdfundingLP() {
     <div className="min-h-screen bg-[#fdfbf7] text-[#5d4037] selection:bg-rose-200 overflow-hidden font-zen">
       
       {/* ヘッダーロゴ */}
-      <header className="absolute top-0 left-0 w-full p-4 md:p-6 z-50">
+      <header className="absolute top-0 left-0 w-full px-5 py-4 sm:px-8 sm:py-6 lg:px-12 z-50">
         <a href="https://www.ikukyu-mirais.com/" target="_blank" rel="noopener noreferrer" className="inline-block transition-transform hover:scale-105">
-          <img src="/mirais_logo.png" alt="MIRAIS" className="h-10 md:h-12 w-auto object-contain" />
+          <Image src="/mirais_logo.png" alt="MIRAIS" width={469} height={126} loading="eager" className="h-9 sm:h-11 w-auto object-contain" />
         </a>
       </header>
 
       {/* 1. ファーストビュー */}
-      <section className="relative min-h-[95vh] flex flex-col items-center justify-center px-6 pt-24 pb-16">
-        <div className="absolute inset-0 bg-[#fdfbf7] -z-20"></div>
-        <div className="absolute top-0 right-0 w-[60vw] h-[60vw] bg-rose-100/40 rounded-full mix-blend-multiply filter blur-[80px] opacity-70 -z-10"></div>
-        <div className="absolute bottom-0 left-0 w-[50vw] h-[50vw] bg-amber-100/40 rounded-full mix-blend-multiply filter blur-[80px] opacity-70 -z-10"></div>
-        
+      <section className="paper-texture relative min-h-[760px] lg:min-h-[780px] flex items-center overflow-hidden px-5 pt-24 pb-14 sm:px-8 sm:pt-28 sm:pb-20 lg:px-12">
+        <div className="absolute inset-0 bg-[linear-gradient(145deg,#fffdf8_0%,#fff8f4_48%,#f5faf7_100%)] -z-30"></div>
+        <div className="absolute -top-24 -right-20 w-80 h-80 sm:w-[34rem] sm:h-[34rem] bg-rose-100/55 rounded-full blur-[70px] -z-20"></div>
+        <div className="absolute -bottom-28 -left-24 w-72 h-72 sm:w-[30rem] sm:h-[30rem] bg-amber-100/45 rounded-full blur-[70px] -z-20"></div>
+        <BookOpen aria-hidden="true" strokeWidth={0.8} className="absolute -right-10 top-[18%] hidden h-[28rem] w-[28rem] rotate-[-8deg] text-[#e7d8c8]/35 sm:block lg:right-[2%] lg:top-[20%] lg:h-[34rem] lg:w-[34rem]" />
+        <Heart aria-hidden="true" strokeWidth={1.3} className="absolute left-[7%] top-[20%] h-5 w-5 rotate-[-12deg] text-[#e99ab0]/65" />
+        <Heart aria-hidden="true" strokeWidth={1.3} className="absolute bottom-[18%] right-[6%] h-7 w-7 rotate-12 text-[#79b7a0]/50" />
+
         <motion.div 
           initial="hidden" animate="visible" variants={staggerContainer}
-          className="relative z-10 text-center max-w-5xl mx-auto flex flex-col items-center"
+          className="relative z-10 w-full max-w-6xl mx-auto grid items-center gap-7 sm:gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:gap-10"
         >
-          <motion.div variants={fadeIn} className="mb-8">
-            <span className="inline-block px-6 py-2 rounded-full bg-white border border-rose-100 text-[#d4b028] font-bold text-sm md:text-base tracking-widest shadow-sm">
-              育休コミュニティMIRAIS発！親心を未来に残す絵本
-            </span>
-          </motion.div>
-          
-          <motion.h1 variants={fadeIn} className="text-4xl md:text-[4rem] font-serif font-bold text-[#5d4037] mb-10 leading-tight">
-            うまくできない日も、<br className="md:hidden"/>大好きは残せる。
-          </motion.h1>
-          
-          <motion.p variants={fadeIn} className="text-lg md:text-2xl text-[#795548] mb-12 font-medium leading-[2.2]">
-            親の「ありのままの気持ち」を、<br/>
-            未来の子どもへ手渡す絵本をつくります。
-          </motion.p>
-          
-          <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-6 justify-center items-center w-full sm:w-auto mt-4">
-             <a href="https://readyfor.jp/projects/mirais-storybook?sns_share_token=e10485c4437094f6cedc&utm_source=pj_share_url&utm_medium=social" target="_blank" rel="noopener noreferrer" className="group relative inline-flex items-center justify-center px-10 py-5 text-xl font-bold text-white transition-all bg-[#f0a8b9] rounded-full hover:bg-rose-400 overflow-hidden shadow-xl hover:shadow-rose-300/50 hover:-translate-y-1 w-full sm:w-auto">
-               <span className="relative flex items-center">
-                 プロジェクトを応援する <ArrowRight className="ml-3 w-6 h-6 transition-transform group-hover:translate-x-2" />
-               </span>
-             </a>
+          <div className="text-center lg:text-left lg:pt-10">
+            <motion.div variants={fadeIn} className="mb-6 sm:mb-8">
+              <span className="inline-block max-w-full rounded-full border border-[#eadfca] bg-white/85 px-4 py-2 text-[11px] sm:px-6 sm:text-sm text-[#b29022] font-bold tracking-[0.12em] shadow-[0_8px_30px_rgba(93,64,55,0.06)]">
+                育休コミュニティMIRAIS発！親心を未来に残す絵本
+              </span>
+            </motion.div>
+
+            <motion.h1 variants={fadeIn} className="story-title font-serif font-bold text-[#5d4037] text-[clamp(2rem,8.2vw,3.5rem)] sm:text-[3.5rem] lg:text-[clamp(3rem,3.65vw,3.4rem)] leading-[1.42] sm:leading-[1.35] mb-5 sm:mb-7">
+              <span className="block">うまくできない日も、</span>
+              <span className="block">大好きは残せる。</span>
+            </motion.h1>
+
+            <motion.p variants={fadeIn} className="story-copy max-w-[31rem] mx-auto lg:mx-0 text-base sm:text-xl lg:text-[1.35rem] text-[#795548] font-medium leading-[2] sm:leading-[2.05]">
+              親の「ありのままの気持ち」を、<span className="whitespace-nowrap">未来の子どもへ</span>手渡す絵本をつくります。
+            </motion.p>
+
+            <motion.div variants={fadeIn} className="mt-7 sm:mt-10 flex justify-center lg:justify-start">
+              <a href="https://readyfor.jp/projects/mirais-storybook?sns_share_token=e10485c4437094f6cedc&utm_source=pj_share_url&utm_medium=social" target="_blank" rel="noopener noreferrer" className="group relative inline-flex min-h-14 w-full max-w-[23rem] items-center justify-center overflow-hidden rounded-full bg-[#e994aa] px-7 py-4 text-base sm:text-lg font-bold tracking-[0.04em] text-white shadow-[0_14px_34px_rgba(225,130,154,0.28)] transition-all hover:-translate-y-1 hover:bg-[#df8199] hover:shadow-[0_18px_42px_rgba(225,130,154,0.36)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#e994aa]">
+                <span className="relative flex items-center">
+                  プロジェクトを応援する <ArrowRight className="ml-3 w-5 h-5 sm:w-6 sm:h-6 transition-transform group-hover:translate-x-2" />
+                </span>
+              </a>
+            </motion.div>
+          </div>
+
+          <motion.div variants={fadeIn} className="relative mx-auto w-full max-w-[20rem] sm:max-w-[27rem] lg:max-w-[33rem] lg:translate-y-5">
+            <div className="absolute inset-[9%] rounded-[47%_53%_46%_54%/52%_42%_58%_48%] bg-white/82 shadow-[0_24px_70px_rgba(93,64,55,0.10)] rotate-2"></div>
+            <Heart aria-hidden="true" strokeWidth={1.25} className="absolute left-[1%] top-[27%] z-20 h-6 w-6 -rotate-12 text-[#e7a1b4]/75" />
+            <Image
+              src="/luna_reading_reference.png"
+              alt="公式デザインをもとに描いた、絵本を読むベイビールナ"
+              width={1254}
+              height={1254}
+              loading="eager"
+              fetchPriority="high"
+              sizes="(max-width: 767px) 320px, (max-width: 1023px) 432px, 528px"
+              className="relative z-10 h-auto w-full drop-shadow-[0_22px_24px_rgba(93,64,55,0.10)]"
+            />
+            <Heart aria-hidden="true" strokeWidth={1.25} className="absolute right-[1%] top-[18%] z-20 h-5 w-5 rotate-12 text-[#78b6a0]/70" />
           </motion.div>
         </motion.div>
       </section>
@@ -73,8 +95,8 @@ export default function CrowdfundingLP() {
           className="max-w-3xl mx-auto relative z-10 text-center space-y-16"
         >
           <div className="text-center space-y-6">
-            <motion.h2 variants={fadeIn} className="text-3xl md:text-[2.5rem] font-serif font-bold text-[#5d4037] leading-tight">
-              読む絵本ではなく、<br className="md:hidden"/>残す絵本を作りたい。
+            <motion.h2 variants={fadeIn} className="story-title text-3xl md:text-[2.5rem] font-serif font-bold text-[#5d4037] leading-[1.55]">
+              読む絵本ではなく、残す絵本を作りたい。
             </motion.h2>
           </div>
 
@@ -100,21 +122,21 @@ export default function CrowdfundingLP() {
             </div>
           </motion.div>
 
-          <div className="text-xl md:text-2xl text-[#5d4037] leading-[2.5] space-y-12">
+          <div className="story-copy text-lg md:text-xl text-[#5d4037] leading-[2.2] md:leading-[2.4] space-y-9 md:space-y-12 max-w-[34rem] mx-auto">
             <motion.p variants={fadeIn}>
-              子どもを愛しているのに、<br/>笑顔でいられなかった日。
+              子どもを愛しているのに、笑顔でいられなかった日。
             </motion.p>
             <motion.p variants={fadeIn}>
-              早く寝てほしいと思った夜。<br/>ひとりになりたいと思った瞬間。
+              早く寝てほしいと思った夜。ひとりになりたいと思った瞬間。
             </motion.p>
             <motion.p variants={fadeIn}>
-              でも、その奥には、<br/>いつも子どもへの愛がありました。
+              でも、その奥には、いつも子どもへの愛がありました。
             </motion.p>
             <motion.div variants={fadeIn} className="relative mt-24">
               <div className="bg-white border-2 border-dashed border-rose-300 p-10 md:p-16 rounded-[2.5rem] text-center shadow-sm">
-                <p className="text-2xl md:text-3xl font-serif font-bold text-[#f0a8b9] leading-[1.8]">
-                  私たちが作りたいのは、<br/>
-                  そんな親の気持ちを未来へ残す絵本です。
+                <p className="story-title text-xl sm:text-2xl md:text-3xl font-serif font-bold text-[#e58fa5] leading-[1.8]">
+                  <span className="block sm:inline">私たちが作りたいのは、</span>{' '}
+                  <span className="block sm:inline">そんな親の気持ちを未来へ残す絵本です。</span>
                 </p>
               </div>
             </motion.div>
@@ -189,18 +211,27 @@ export default function CrowdfundingLP() {
               この絵本で届けたいこと
             </motion.h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            <motion.div variants={fadeIn} className="bg-[#fef5f7] p-10 md:p-12 rounded-[2.5rem] border border-rose-100 text-center shadow-sm">
-              <h3 className="font-bold text-2xl text-[#f0a8b9] mb-6 border-b border-rose-200 pb-4 inline-block">子どもへ</h3>
-              <p className="text-[#5d4037] leading-[2.2] text-lg font-medium">「あなたはずっと、大切に思われていた」という変わらない愛を伝えます。</p>
+          <div className="grid gap-5 md:grid-cols-3 md:gap-6 lg:gap-8">
+            <motion.div variants={fadeIn} className="paper-texture group relative overflow-hidden rounded-[2rem] border border-[#f3d9df] bg-[#fff7f8] p-7 sm:p-9 md:px-7 md:py-9 lg:p-10 text-center shadow-[0_14px_40px_rgba(93,64,55,0.06)] transition-transform hover:-translate-y-1">
+              <div className="mx-auto mb-5 flex h-20 w-20 rotate-[-3deg] items-center justify-center rounded-[44%_56%_48%_52%] bg-white text-[#e994aa] shadow-[0_10px_25px_rgba(233,148,170,0.16)] ring-1 ring-[#f4d8df] transition-transform group-hover:rotate-0">
+                <BookOpen aria-hidden="true" strokeWidth={1.6} className="h-9 w-9" />
+              </div>
+              <h3 className="font-bold text-xl lg:text-2xl text-[#dc839a] mb-4">子どもへ</h3>
+              <p className="story-copy text-[#5d4037] leading-[2] text-base lg:text-lg font-medium">「あなたはずっと、大切に思われていた」という変わらない愛を伝えます。</p>
             </motion.div>
-            <motion.div variants={fadeIn} className="bg-[#eef7f2] p-10 md:p-12 rounded-[2.5rem] border border-[#a8d5ba] text-center shadow-sm">
-              <h3 className="font-bold text-2xl text-[#86bfa0] mb-6 border-b border-[#a8d5ba] pb-4 inline-block">親へ</h3>
-              <p className="text-[#5d4037] leading-[2.2] text-lg font-medium">うまくできなかった自分を責めるのではなく、一生懸命だった自分を抱きしめるお守りに。</p>
+            <motion.div variants={fadeIn} className="paper-texture group relative overflow-hidden rounded-[2rem] border border-[#cfe5d8] bg-[#f3faf6] p-7 sm:p-9 md:px-7 md:py-9 lg:p-10 text-center shadow-[0_14px_40px_rgba(93,64,55,0.06)] transition-transform hover:-translate-y-1">
+              <div className="mx-auto mb-5 flex h-20 w-20 rotate-[3deg] items-center justify-center rounded-[54%_46%_52%_48%] bg-white text-[#74ae8d] shadow-[0_10px_25px_rgba(116,174,141,0.16)] ring-1 ring-[#cfe5d8] transition-transform group-hover:rotate-0">
+                <Heart aria-hidden="true" strokeWidth={1.6} className="h-9 w-9" />
+              </div>
+              <h3 className="font-bold text-xl lg:text-2xl text-[#6ea887] mb-4">親へ</h3>
+              <p className="story-copy text-[#5d4037] leading-[2] text-base lg:text-lg font-medium">うまくできなかった自分を責めるのではなく、一生懸命だった自分を抱きしめるお守りに。</p>
             </motion.div>
-            <motion.div variants={fadeIn} className="bg-[#fefce8] p-10 md:p-12 rounded-[2.5rem] border border-[#f9e28c] text-center shadow-sm">
-              <h3 className="font-bold text-2xl text-[#d4b028] mb-6 border-b border-[#f9e28c] pb-4 inline-block">未来の家族へ</h3>
-              <p className="text-[#5d4037] leading-[2.2] text-lg font-medium">数年後、一緒に読み返したときに、「こんなこともあったね」と笑い合える時間を届けます。</p>
+            <motion.div variants={fadeIn} className="paper-texture group relative overflow-hidden rounded-[2rem] border border-[#f0dfaa] bg-[#fffbec] p-7 sm:p-9 md:px-7 md:py-9 lg:p-10 text-center shadow-[0_14px_40px_rgba(93,64,55,0.06)] transition-transform hover:-translate-y-1">
+              <div className="mx-auto mb-5 flex h-20 w-20 rotate-[-2deg] items-center justify-center rounded-[48%_52%_55%_45%] bg-white text-[#c9a52e] shadow-[0_10px_25px_rgba(201,165,46,0.16)] ring-1 ring-[#f0dfaa] transition-transform group-hover:rotate-0">
+                <Users aria-hidden="true" strokeWidth={1.6} className="h-9 w-9" />
+              </div>
+              <h3 className="font-bold text-xl lg:text-2xl text-[#b99520] mb-4">未来の家族へ</h3>
+              <p className="story-copy text-[#5d4037] leading-[2] text-base lg:text-lg font-medium">数年後、一緒に読み返したときに、「こんなこともあったね」と笑い合える時間を届けます。</p>
             </motion.div>
           </div>
         </motion.div>
@@ -352,7 +383,14 @@ export default function CrowdfundingLP() {
             </motion.div>
             <motion.div variants={fadeIn} className="text-center relative group">
               <div className="absolute inset-0 bg-white blur-xl opacity-60 rounded-full"></div>
-              <img src="/luna_sketch.png" alt="ベイビールナ" className="relative w-full max-w-sm mx-auto rounded-3xl mix-blend-multiply transition-transform group-hover:scale-105" />
+              <Image
+                src="/luna_reading_reference.png"
+                alt="公式デザインをもとに描いたベイビールナ"
+                width={1254}
+                height={1254}
+                sizes="(max-width: 767px) 320px, 384px"
+                className="relative w-full max-w-sm mx-auto transition-transform drop-shadow-[0_18px_24px_rgba(93,64,55,0.10)] group-hover:scale-105"
+              />
             </motion.div>
           </div>
         </motion.div>
@@ -874,7 +912,7 @@ export default function CrowdfundingLP() {
               </a>
             </div>
             <div className="text-[#795548] font-medium space-y-2 text-sm md:text-base mt-6">
-              <p>※スムーズにご支援いただくために、事前のREADYFORへの会員登録（無料）をおすすめしております。</p>
+              <p>※スムーズにご支援いただくために、READYFORへの会員登録（無料）をおすすめしております。</p>
               <p className="font-bold">※READYFORのプロジェクトページへ遷移します</p>
             </div>
           </motion.div>

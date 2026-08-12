@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { M_PLUS_Rounded_1c, Zen_Maru_Gothic } from "next/font/google";
+import { Shippori_Mincho, Zen_Maru_Gothic } from "next/font/google";
 import "./globals.css";
 
-const mPlusRounded = M_PLUS_Rounded_1c({
-  weight: ["400", "700", "800"],
+const shipporiMincho = Shippori_Mincho({
+  weight: ["600", "700"],
   subsets: ["latin"],
   variable: "--font-heading",
   display: "swap",
@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja" className={`${mPlusRounded.variable} ${zenMaruGothic.variable}`}>
+    <html lang="ja" className={`${shipporiMincho.variable} ${zenMaruGothic.variable}`}>
       <body className="font-zen antialiased text-slate-800 bg-[#fdfbf7] selection:bg-rose-200">
         {children}
       </body>

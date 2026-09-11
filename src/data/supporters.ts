@@ -20,14 +20,50 @@ export type Sponsor = {
   logo?: string;
 };
 
-/** プレミアム法人スポンサー（2社） */
-export const premiumCorporateSponsors: Sponsor[] = [];
+/**
+ * プレミアム法人スポンサー（2社）
+ * ロゴは大サイズで表示。`logo` に public/sponsors/ 配下のパスを入れる。
+ */
+export const premiumCorporateSponsors: Sponsor[] = [
+  {
+    name: '株式会社ハゴロモ',
+    url: 'https://www.hagoromo.com/',
+    // logo: '/sponsors/hagoromo.png',
+  },
+  {
+    name: '三ツ和商事株式会社',
+    url: 'https://mitsuwa-shoji.co.jp/',
+    // logo: '/sponsors/mitsuwa-shoji.png',
+  },
+];
 
-/** 法人スポンサー（2社） */
-export const corporateSponsors: Sponsor[] = [];
+/**
+ * 法人スポンサー（2社）
+ * ロゴは中サイズで表示。
+ */
+export const corporateSponsors: Sponsor[] = [
+  {
+    name: '株式会社HalScene',
+    url: 'https://halscene.com/',
+    // logo: '/sponsors/halscene.png',
+  },
+  {
+    name: '2.5合同会社',
+    url: 'https://niitengo.co.jp/',
+    // logo: '/sponsors/niitengo.png',
+  },
+];
 
-/** 個人スポンサー（4名） */
-export const individualSponsors: Sponsor[] = [];
+/**
+ * 個人スポンサー（4名）
+ * お名前のみ。リンクは希望された方だけ `url` を入れる。
+ */
+export const individualSponsors: Sponsor[] = [
+  { name: 'norigapore' }, // リンク掲載なしのご希望
+  { name: 'かくう', url: 'https://note.com/kakuu3594' },
+  { name: '青木 祐利', url: 'https://app.notion.com/p/Only-One-_-3522471365f18051822cc2330894efde?source=copy_link' },
+  { name: 'ましもん', url: 'https://awababy.tech/' },
+];
 
 /** 想定件数。実データが入るまでの案内文に使う */
 export const sponsorCounts = {

@@ -92,34 +92,56 @@ function VideoCredit({ lines }: { lines: VideoCreditLine[] }) {
 
 function SponsorCard({ sponsor, variant }: { sponsor: Sponsor; variant: 'premium' | 'corporate' | 'individual' }) {
   const isPremium = variant === 'premium';
+  const isIndividual = variant === 'individual';
+
+  // プレミアムは大サイズ、企業は中サイズ
+  const logoBox = isPremium ? 'h-28 md:h-32' : 'h-16 md:h-20';
+  const logoImg = isPremium ? 'max-h-28 md:max-h-32' : 'max-h-16 md:max-h-20';
+
+  const className = [
+    'bg-white flex flex-col text-center transition-transform hover:-translate-y-1',
+    isPremium
+      ? 'p-8 md:p-10 rounded-[2rem] border-2 border-[#e0c56a] shadow-xl'
+      : isIndividual
+        ? 'p-6 md:p-7 rounded-[2rem] border border-[#f3d9df] shadow-sm'
+        : 'p-7 md:p-8 rounded-[2rem] border border-slate-200 shadow-md',
+  ].join(' ');
+
   const inner = (
     <>
       {sponsor.logo ? (
-        <div className="mb-5 flex h-20 items-center justify-center">
-          <img src={sponsor.logo} alt={sponsor.name} className="max-h-20 w-auto object-contain" />
+        <div className={`mb-5 flex items-center justify-center ${logoBox}`}>
+          <img src={sponsor.logo} alt={sponsor.name} className={`w-auto object-contain ${logoImg}`} />
         </div>
       ) : (
-        <div className={`mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full ${isPremium ? 'bg-white/15 text-rose-50' : 'bg-[#f4f7f5] text-[#86bfa0]'}`}>
-          {variant === 'individual' ? <Heart className="h-6 w-6" /> : <Building2 className="h-6 w-6" />}
+        !isIndividual && (
+          <div className={`mx-auto mb-5 flex items-center justify-center rounded-full bg-[#f4f7f5] text-[#86bfa0] ${isPremium ? 'h-16 w-16' : 'h-14 w-14'}`}>
+            <Building2 className={isPremium ? 'h-7 w-7' : 'h-6 w-6'} />
+          </div>
+        )
+      )}
+
+      {isIndividual && !sponsor.logo && (
+        <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#fff7f8] text-[#e994aa]">
+          <Heart className="h-5 w-5" />
         </div>
       )}
-      <h4 className={`font-bold text-lg md:text-xl mb-3 ${isPremium ? 'text-white' : 'text-[#5d4037]'}`}>{sponsor.name}</h4>
+
+      <h4 className={`font-bold text-[#5d4037] mb-2 ${isPremium ? 'text-xl md:text-2xl' : 'text-lg md:text-xl'}`}>
+        {sponsor.name}
+      </h4>
+
       {sponsor.description && (
-        <p className={`text-sm md:text-base leading-relaxed flex-grow ${isPremium ? 'text-rose-50/90' : 'text-[#5d4037]/80'}`}>
-          {sponsor.description}
-        </p>
+        <p className="text-sm md:text-base leading-relaxed text-[#5d4037]/80 flex-grow">{sponsor.description}</p>
       )}
+
       {sponsor.url && (
-        <span className={`mt-6 inline-flex items-center justify-center text-sm font-bold ${isPremium ? 'text-rose-100' : 'text-[#86bfa0]'}`}>
+        <span className="mt-5 inline-flex items-center justify-center text-sm font-bold text-[#86bfa0]">
           くわしく見る <ExternalLink className="ml-2 h-4 w-4" />
         </span>
       )}
     </>
   );
-
-  const className = isPremium
-    ? "bg-gradient-to-br from-[#5d4037] to-[#8b5e34] p-8 rounded-[2rem] shadow-xl flex flex-col text-center text-white transition-transform hover:-translate-y-1"
-    : "bg-white p-8 rounded-[2rem] border border-slate-200 shadow-md flex flex-col text-center transition-transform hover:-translate-y-1";
 
   return sponsor.url ? (
     <a href={sponsor.url} target="_blank" rel="noopener noreferrer" className={className}>{inner}</a>
@@ -671,7 +693,7 @@ export default function MiraisEhonProjectPage() {
               {individualSponsors.length > 0 && (
                 <motion.div variants={fadeIn}>
                   <h3 className="text-center font-bold text-xl md:text-2xl text-[#5d4037] mb-8">個人スポンサー</h3>
-                  <div className="grid max-w-4xl mx-auto grid-cols-1 gap-6 md:grid-cols-3">
+                  <div className="grid max-w-5xl mx-auto grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
                     {individualSponsors.map((s) => <SponsorCard key={s.name} sponsor={s} variant="individual" />)}
                   </div>
                 </motion.div>

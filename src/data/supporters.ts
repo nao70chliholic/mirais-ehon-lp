@@ -26,14 +26,14 @@ export const premiumCorporateSponsors: Sponsor[] = [];
 /** 法人スポンサー（2社） */
 export const corporateSponsors: Sponsor[] = [];
 
-/** 個人スポンサー（3名） */
+/** 個人スポンサー（4名） */
 export const individualSponsors: Sponsor[] = [];
 
 /** 想定件数。実データが入るまでの案内文に使う */
 export const sponsorCounts = {
   premiumCorporate: 2,
   corporate: 2,
-  individual: 3,
+  individual: 4,
 } as const;
 
 /**

@@ -17,8 +17,8 @@ const zenMaruGothic = Zen_Maru_Gothic({
 });
 
 export const metadata: Metadata = {
-  title: "MIRAISえほん クラウドファンディング",
-  description: "育休コミュニティMIRAIS発。親のリアルな気持ちを、親子で読み返せる絵本にします。",
+  title: "MIRAISえほん｜親心を未来へ残す絵本",
+  description: "育休コミュニティMIRAIS発。199名の皆さまのご支援で、親の「ありのままの気持ち」を未来の子どもへ手渡す絵本をつくっています。",
 };
 
 export default function RootLayout({

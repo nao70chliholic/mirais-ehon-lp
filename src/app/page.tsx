@@ -94,9 +94,9 @@ function SponsorCard({ sponsor, variant }: { sponsor: Sponsor; variant: 'premium
   const isPremium = variant === 'premium';
   const isIndividual = variant === 'individual';
 
-  // プレミアムは大サイズ、企業は中サイズ
-  const logoBox = isPremium ? 'h-28 md:h-32' : 'h-16 md:h-20';
-  const logoImg = isPremium ? 'max-h-28 md:max-h-32' : 'max-h-16 md:max-h-20';
+  // プレミアムは大サイズ、企業は中サイズ。
+  // 横長のワードマークは幅で頭打ちになるため、カード幅そのものでも差をつけている。
+  const logoBox = isPremium ? 'h-24 md:h-28' : 'h-14 md:h-16';
 
   const className = [
     'bg-white flex flex-col text-center transition-transform hover:-translate-y-1',
@@ -111,7 +111,7 @@ function SponsorCard({ sponsor, variant }: { sponsor: Sponsor; variant: 'premium
     <>
       {sponsor.logo ? (
         <div className={`mb-5 flex items-center justify-center ${logoBox}`}>
-          <img src={sponsor.logo} alt={sponsor.name} className={`w-auto object-contain ${logoImg}`} />
+          <img src={sponsor.logo} alt={sponsor.name} className="max-h-full max-w-full w-auto object-contain" />
         </div>
       ) : (
         !isIndividual && (
@@ -128,7 +128,7 @@ function SponsorCard({ sponsor, variant }: { sponsor: Sponsor; variant: 'premium
       )}
 
       <h4 className={`font-bold text-[#5d4037] mb-2 ${isPremium ? 'text-xl md:text-2xl' : 'text-lg md:text-xl'}`}>
-        {sponsor.name}
+        {sponsor.name}<span className="ml-0.5 font-normal">様</span>
       </h4>
 
       {sponsor.description && (
@@ -677,7 +677,7 @@ export default function MiraisEhonProjectPage() {
               {premiumCorporateSponsors.length > 0 && (
                 <motion.div variants={fadeIn}>
                   <h3 className="text-center font-bold text-xl md:text-2xl text-[#5d4037] mb-8">プレミアム法人スポンサー</h3>
-                  <div className="grid max-w-3xl mx-auto grid-cols-1 gap-6 md:grid-cols-2">
+                  <div className="grid max-w-5xl mx-auto grid-cols-1 gap-8 md:grid-cols-2">
                     {premiumCorporateSponsors.map((s) => <SponsorCard key={s.name} sponsor={s} variant="premium" />)}
                   </div>
                 </motion.div>

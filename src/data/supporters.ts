@@ -28,12 +28,12 @@ export const premiumCorporateSponsors: Sponsor[] = [
   {
     name: '株式会社ハゴロモ',
     url: 'https://www.hagoromo.com/',
-    // logo: '/sponsors/hagoromo.png',
+    logo: '/sponsors/hagoromo.png',
   },
   {
     name: '三ツ和商事株式会社',
     url: 'https://mitsuwa-shoji.co.jp/',
-    // logo: '/sponsors/mitsuwa-shoji.png',
+    logo: '/sponsors/mitsuwa-shoji.png',
   },
 ];
 
@@ -45,12 +45,12 @@ export const corporateSponsors: Sponsor[] = [
   {
     name: '株式会社HalScene',
     url: 'https://halscene.com/',
-    // logo: '/sponsors/halscene.png',
+    logo: '/sponsors/halscene.png',
   },
   {
     name: '2.5合同会社',
     url: 'https://niitengo.co.jp/',
-    // logo: '/sponsors/niitengo.png',
+    logo: '/sponsors/niitengo.png',
   },
 ];
 

@@ -123,6 +123,6 @@ export const familyVideo = {
   heading: '【声の美容液】咲紀 × MIRAIS「家族で読む『だいすき』」',
   credits: [
     { role: '朗読', name: '咲紀', url: 'https://lit.link/masakix2nd' },
-    { role: '脚本原案・サムネ制作', name: 'aya', url: 'https://lit.link/inza20261123' },
+    { role: '脚本原案', name: 'aya', url: 'https://lit.link/inza20261123' },
   ] as VideoCreditLine[],
 };
